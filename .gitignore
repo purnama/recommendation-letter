@@ -1,0 +1,24 @@
+# Node modules (if ever added)
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build files (if ever added)
+dist/
+build/
+
+# Environment files
+.env
+.env.local

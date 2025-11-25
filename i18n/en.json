@@ -1,0 +1,50 @@
+{
+  "ui": {
+    "appTitle": "Employment Reference Letter Generator",
+    "introTitle": "About This Tool",
+    "formTitle": "Generate Reference Letter",
+    "formSubtitle": "Complete the form below to create your employment reference letter"
+  },
+  "intro": {
+    "description": "This tool helps you generate professional employment reference letters based on the German Arbeitszeugnis system.",
+    "germanSystem": "The German Arbeitszeugnis uses a unique coded language where positive-sounding statements have specific hidden meanings about an employee's performance. This system ensures legal compliance while allowing honest assessments.",
+    "howItWorksTitle": "How It Works:",
+    "howItWorks": [
+      "Fill in the employee and company information",
+      "Select performance ratings for different categories",
+      "The system automatically generates appropriate coded language",
+      "Preview and download or print your reference letter"
+    ],
+    "ratingsTitle": "Understanding the Rating System:"
+  },
+  "ratings": {
+    "veryGood": {
+      "label": "Very Good (1)",
+      "description": "Outstanding performance, exceeds expectations"
+    },
+    "good": {
+      "label": "Good (2)",
+      "description": "Strong performance, meets all expectations"
+    },
+    "satisfactory": {
+      "label": "Satisfactory (3)",
+      "description": "Acceptable performance, meets basic requirements"
+    },
+    "adequate": {
+      "label": "Adequate (4)",
+      "description": "Below average performance, minimal requirements met"
+    },
+    "poor": {
+      "label": "Poor (5)",
+      "description": "Unsatisfactory performance, significant issues"
+    }
+  },
+  "form": {
+    "employeeInfo": "Employee Information",
+    "companyInfo": "Company Information"
+  },
+  "templates": {
+    "opening": "This is to certify that {name} was employed at {company} from {startDate} to {endDate}.",
+    "closing": "We wish {name} all the best for the future."
+  }
+}

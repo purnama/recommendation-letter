@@ -1,0 +1,50 @@
+{
+  "ui": {
+    "appTitle": "Generator Surat Referensi Kerja",
+    "introTitle": "Tentang Alat Ini",
+    "formTitle": "Buat Surat Referensi",
+    "formSubtitle": "Lengkapi formulir di bawah ini untuk membuat surat referensi kerja Anda"
+  },
+  "intro": {
+    "description": "Alat ini membantu Anda menghasilkan surat referensi kerja profesional berdasarkan sistem Arbeitszeugnis Jerman.",
+    "germanSystem": "Arbeitszeugnis Jerman menggunakan bahasa kode unik di mana pernyataan yang terdengar positif memiliki makna tersembunyi spesifik tentang kinerja karyawan. Sistem ini memastikan kepatuhan hukum sambil memungkinkan penilaian yang jujur.",
+    "howItWorksTitle": "Cara Kerjanya:",
+    "howItWorks": [
+      "Isi informasi karyawan dan perusahaan",
+      "Pilih peringkat kinerja untuk berbagai kategori",
+      "Sistem secara otomatis menghasilkan bahasa kode yang sesuai",
+      "Pratinjau dan unduh atau cetak surat referensi Anda"
+    ],
+    "ratingsTitle": "Memahami Sistem Peringkat:"
+  },
+  "ratings": {
+    "veryGood": {
+      "label": "Sangat Baik (1)",
+      "description": "Kinerja luar biasa, melebihi ekspektasi"
+    },
+    "good": {
+      "label": "Baik (2)",
+      "description": "Kinerja kuat, memenuhi semua ekspektasi"
+    },
+    "satisfactory": {
+      "label": "Memuaskan (3)",
+      "description": "Kinerja dapat diterima, memenuhi persyaratan dasar"
+    },
+    "adequate": {
+      "label": "Cukup (4)",
+      "description": "Kinerja di bawah rata-rata, persyaratan minimal terpenuhi"
+    },
+    "poor": {
+      "label": "Kurang (5)",
+      "description": "Kinerja tidak memuaskan, masalah signifikan"
+    }
+  },
+  "form": {
+    "employeeInfo": "Informasi Karyawan",
+    "companyInfo": "Informasi Perusahaan"
+  },
+  "templates": {
+    "opening": "Ini adalah untuk membuktikan bahwa {name} bekerja di {company} dari {startDate} hingga {endDate}.",
+    "closing": "Kami mendoakan {name} yang terbaik untuk masa depan."
+  }
+}
