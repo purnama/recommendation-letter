@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Load saved data from localStorage if available
     loadSavedData();
+    
+    // Auto-generate letter after a short delay to ensure translations are loaded
+    setTimeout(() => {
+        if (typeof generateLetter === 'function') {
+            generateLetter();
+        }
+    }, 1000);
 });
 
 // Setup event listeners
@@ -246,6 +253,19 @@ function updateFormLabels() {
         offerLabel.textContent = translations.form.labels.additionalOffer;
     }
     
+    // Update preview section
+    const previewTitle = document.getElementById('preview-title');
+    if (previewTitle && translations.preview) previewTitle.textContent = translations.preview.title;
+    
+    const btnGenerate = document.getElementById('btn-generate');
+    if (btnGenerate && translations.preview) btnGenerate.innerHTML = `<i class="bi bi-file-earmark-text"></i> ${translations.preview.generateButton}`;
+    
+    const btnPrint = document.getElementById('btn-print');
+    if (btnPrint && translations.preview) btnPrint.innerHTML = `<i class="bi bi-printer"></i> ${translations.preview.printButton}`;
+    
+    const previewPlaceholder = document.getElementById('preview-placeholder');
+    if (previewPlaceholder && translations.preview) previewPlaceholder.textContent = translations.preview.placeholder;
+    
     // Update dynamic content
     updateIntroductionText();
     updateCompanyDescriptionText();
@@ -319,8 +339,8 @@ function updateDutiesIntroText() {
     
     // Get form values for replacement
     const formData = {
-        title: document.getElementById('title')?.value || '',
-        lastName: document.getElementById('lastName')?.value || '',
+        title: getTranslatedTitle(),
+        firstName: document.getElementById('firstName')?.value || '',
         position: document.getElementById('position')?.value || '',
         department: document.getElementById('department')?.value || ''
     };
@@ -366,6 +386,13 @@ function updatePerformanceVariants(category, rating) {
     container.innerHTML = html;
 }
 
+// Helper function to get translated title
+function getTranslatedTitle() {
+    const titleValue = document.getElementById('title')?.value || '';
+    if (!titleValue || !translations?.form?.titleOptions) return '';
+    return translations.form.titleOptions[titleValue] || titleValue;
+}
+
 // Update performance text based on selected rating and variant
 function updatePerformanceText(category) {
     const rating = document.querySelector(`input[name="${category}Rating"]:checked`)?.value || 'sehr-gut';
@@ -376,7 +403,7 @@ function updatePerformanceText(category) {
     
     // Get form values for replacement
     const formData = {
-        title: document.getElementById('title')?.value || '',
+        title: getTranslatedTitle(),
         firstName: document.getElementById('firstName')?.value || '',
         lastName: document.getElementById('lastName')?.value || '',
         position: document.getElementById('position')?.value || '',
@@ -415,7 +442,7 @@ function updateLeavingText() {
     
     // Replace placeholders
     const formData = {
-        title: document.getElementById('title')?.value || '',
+        title: getTranslatedTitle(),
         firstName: document.getElementById('firstName')?.value || '',
         lastName: document.getElementById('lastName')?.value || '',
         endDate: document.getElementById('endDate')?.value || ''
@@ -447,7 +474,7 @@ function updateAdditionalText() {
     
     // Replace placeholders
     const formData = {
-        title: document.getElementById('title')?.value || '',
+        title: getTranslatedTitle(),
         firstName: document.getElementById('firstName')?.value || '',
         lastName: document.getElementById('lastName')?.value || ''
     };
@@ -517,4 +544,147 @@ function loadSavedData() {
 function clearSavedData() {
     localStorage.removeItem('referenceLetterData');
     console.log('Saved data cleared');
+}
+
+// Helper function to format date
+function formatDate(dateString) {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString(currentLanguage === 'de' ? 'de-DE' : currentLanguage === 'id' ? 'id-ID' : 'en-US', options);
+}
+
+// Generate complete letter
+function generateLetter() {
+    const preview = document.getElementById('letter-preview');
+    if (!preview) return;
+    
+    // Get employee data
+    const title = getTranslatedTitle();
+    const firstName = document.getElementById('firstName')?.value || '';
+    const lastName = document.getElementById('lastName')?.value || '';
+    const dateOfBirth = document.getElementById('dateOfBirth')?.value || '';
+    const placeOfBirth = document.getElementById('placeOfBirth')?.value || '';
+    const position = document.getElementById('position')?.value || '';
+    const department = document.getElementById('department')?.value || '';
+    const startDate = document.getElementById('startDate')?.value || '';
+    const endDate = document.getElementById('endDate')?.value || '';
+    
+    // Check required fields
+    if (!firstName || !lastName || !position || !startDate || !endDate) {
+        alert(currentLanguage === 'de' ? 'Bitte füllen Sie alle Pflichtfelder aus.' : 
+              currentLanguage === 'id' ? 'Harap lengkapi semua bidang yang wajib diisi.' :
+              'Please fill in all required fields.');
+        return;
+    }
+    
+    // Get all text sections
+    const introText = document.getElementById('introduction-text')?.value || '';
+    const companyText = document.getElementById('company-description-text')?.value || '';
+    const dutiesIntro = document.getElementById('duties-intro-text')?.value || '';
+    const dutiesList = document.getElementById('duties-list')?.value || '';
+    
+    const knowledgeText = document.getElementById('knowledge-text')?.value || '';
+    const willingnessText = document.getElementById('willingness-text')?.value || '';
+    const workstyleText = document.getElementById('workstyle-text')?.value || '';
+    const qualityText = document.getElementById('quality-text')?.value || '';
+    const resilienceText = document.getElementById('resilience-text')?.value || '';
+    const leadershipText = document.getElementById('leadership-text')?.value || '';
+    const overallText = document.getElementById('overall-text')?.value || '';
+    const socialText = document.getElementById('social-text')?.value || '';
+    
+    const leavingText = document.getElementById('leaving-text')?.value || '';
+    const farewellText = document.getElementById('farewell-text')?.value || '';
+    const additionalText = document.getElementById('additional-text')?.value || '';
+    
+    // Build letter HTML
+    let letterHTML = `
+        <div class="letter-header mb-4">
+            <h2 class="text-center">${translations.preview?.letterTitle || 'Employment Reference Letter'}</h2>
+            <p class="text-center text-muted">${formatDate(endDate)}</p>
+        </div>
+        
+        <div class="letter-body">
+    `;
+    
+    // Introduction
+    if (introText) {
+        letterHTML += `<p class="mb-3">${introText}</p>`;
+    }
+    
+    // Company Description
+    if (companyText) {
+        letterHTML += `<p class="mb-3">${companyText}</p>`;
+    }
+    
+    // Job Duties
+    if (dutiesIntro) {
+        letterHTML += `<p class="mb-2">${dutiesIntro}</p>`;
+    }
+    if (dutiesList) {
+        // Convert plain text list to formatted list
+        const duties = dutiesList.split('\n').filter(line => line.trim());
+        if (duties.length > 0) {
+            letterHTML += '<ul class="mb-3">';
+            duties.forEach(duty => {
+                const cleanDuty = duty.replace(/^[•\-*]\s*/, '').trim();
+                if (cleanDuty) letterHTML += `<li>${cleanDuty}</li>`;
+            });
+            letterHTML += '</ul>';
+        }
+    }
+    
+    // Performance Sections
+    const performanceSections = [
+        knowledgeText, willingnessText, workstyleText, qualityText, 
+        resilienceText, leadershipText
+    ];
+    
+    performanceSections.forEach(text => {
+        if (text) letterHTML += `<p class="mb-3">${text}</p>`;
+    });
+    
+    // Overall Assessment
+    if (overallText) {
+        letterHTML += `<p class="mb-3">${overallText}</p>`;
+    }
+    
+    // Social Behavior
+    if (socialText) {
+        letterHTML += `<p class="mb-3">${socialText}</p>`;
+    }
+    
+    // Reason for Leaving
+    if (leavingText) {
+        letterHTML += `<p class="mb-3">${leavingText}</p>`;
+    }
+    
+    // Farewell Formula
+    if (farewellText) {
+        letterHTML += `<p class="mb-3">${farewellText}</p>`;
+    }
+    
+    // Additional Phrases (for internships)
+    if (additionalText) {
+        letterHTML += `<p class="mb-3">${additionalText}</p>`;
+    }
+    
+    letterHTML += `
+        </div>
+        
+        <div class="letter-footer mt-5">
+            <div class="row">
+                <div class="col-6">
+                    <p class="mb-0">_______________________</p>
+                    <p class="small">${currentLanguage === 'de' ? 'Ort, Datum' : currentLanguage === 'id' ? 'Tempat, Tanggal' : 'Place, Date'}</p>
+                </div>
+                <div class="col-6">
+                    <p class="mb-0">_______________________</p>
+                    <p class="small">${currentLanguage === 'de' ? 'Unterschrift' : currentLanguage === 'id' ? 'Tanda Tangan' : 'Signature'}</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    preview.innerHTML = letterHTML;
 }

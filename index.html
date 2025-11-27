@@ -86,34 +86,34 @@
                                 <div class="col-md-2">
                                     <label for="title" class="form-label" id="label-title">Title</label>
                                     <select class="form-select" id="title" name="title" aria-label="Title Selection">
-                                        <option value="Herr" id="title-mr">Mr</option>
-                                        <option value="Frau" id="title-ms">Ms</option>
-                                        <option value="Dr" id="title-dr">Dr</option>
+                                        <option value="mr" id="title-mr">Mr</option>
+                                        <option value="ms" id="title-ms">Ms</option>
+                                        <option value="dr" id="title-dr">Dr</option>
                                     </select>
                                 </div>
                                 
                                 <!-- First Name -->
                                 <div class="col-md-3">
                                     <label for="firstName" class="form-label" id="label-firstName">First Name</label>
-                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" value="Max" required>
                                 </div>
                                 
                                 <!-- Last Name -->
                                 <div class="col-md-3">
                                     <label for="lastName" class="form-label" id="label-lastName">Last Name</label>
-                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" value="Mustermann" required>
                                 </div>
                                 
                                 <!-- Date of Birth -->
                                 <div class="col-md-2">
                                     <label for="dateOfBirth" class="form-label" id="label-dateOfBirth">Date of Birth</label>
-                                    <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth">
+                                    <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" value="1990-03-15">
                                 </div>
                                 
                                 <!-- Place of Birth -->
                                 <div class="col-md-2">
                                     <label for="placeOfBirth" class="form-label" id="label-placeOfBirth">Place of Birth</label>
-                                    <input type="text" class="form-control" id="placeOfBirth" name="placeOfBirth">
+                                    <input type="text" class="form-control" id="placeOfBirth" name="placeOfBirth" value="Jakarta">
                                 </div>
                             </div>
                             
@@ -121,25 +121,25 @@
                                 <!-- Position -->
                                 <div class="col-md-4">
                                     <label for="position" class="form-label" id="label-position">Position</label>
-                                    <input type="text" class="form-control" id="position" name="position" required>
+                                    <input type="text" class="form-control" id="position" name="position" value="Head of Digital Product" required>
                                 </div>
                                 
                                 <!-- Department -->
                                 <div class="col-md-4">
                                     <label for="department" class="form-label" id="label-department">Department</label>
-                                    <input type="text" class="form-control" id="department" name="department">
+                                    <input type="text" class="form-control" id="department" name="department" value="Business">
                                 </div>
                                 
                                 <!-- Start Date -->
                                 <div class="col-md-2">
                                     <label for="startDate" class="form-label" id="label-startDate">Start Date</label>
-                                    <input type="date" class="form-control" id="startDate" name="startDate" required>
+                                    <input type="date" class="form-control" id="startDate" name="startDate" value="2019-10-01" required>
                                 </div>
                                 
                                 <!-- End Date -->
                                 <div class="col-md-2">
                                     <label for="endDate" class="form-label" id="label-endDate">End Date</label>
-                                    <input type="date" class="form-control" id="endDate" name="endDate" required>
+                                    <input type="date" class="form-control" id="endDate" name="endDate" value="2024-10-31" required>
                                 </div>
                             </div>
                         </div>
@@ -631,6 +631,30 @@
                                         </div>
                                         <label class="form-label">Generated Text:</label>
                                         <textarea class="form-control" id="additional-text" rows="4" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Letter Preview Section -->
+                        <div class="form-section mb-5 print-section">
+                            <h3 class="text-center mb-4 no-print" id="preview-title">Complete Reference Letter</h3>
+                            
+                            <div class="card border-secondary no-print-container">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-4 no-print">
+                                        <button type="button" class="btn btn-primary" onclick="generateLetter()" id="btn-generate">
+                                            <i class="bi bi-file-earmark-text"></i> Generate Letter
+                                        </button>
+                                        <button type="button" class="btn btn-success" onclick="window.print()" id="btn-print">
+                                            <i class="bi bi-printer"></i> Print Letter
+                                        </button>
+                                    </div>
+                                    
+                                    <div id="letter-preview" class="letter-content p-4 bg-white border rounded print-only">
+                                        <p class="text-muted text-center" id="preview-placeholder">
+                                            Click "Generate Letter" to create your complete reference letter.
+                                        </p>
                                     </div>
                                 </div>
                             </div>

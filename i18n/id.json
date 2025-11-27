@@ -5,6 +5,13 @@
     "formTitle": "Buat Surat Referensi",
     "formSubtitle": "Lengkapi formulir di bawah ini untuk membuat surat referensi kerja Anda"
   },
+  "preview": {
+    "title": "Surat Referensi Lengkap",
+    "generateButton": "Buat Surat",
+    "printButton": "Cetak Surat",
+    "placeholder": "Klik \"Buat Surat\" untuk membuat surat referensi kerja lengkap Anda.",
+    "letterTitle": "Surat Referensi Kerja"
+  },
   "intro": {
     "description": "Alat ini membantu Anda menghasilkan surat referensi kerja profesional berdasarkan sistem Arbeitszeugnis Jerman.",
     "germanSystem": "Arbeitszeugnis Jerman menggunakan bahasa kode unik di mana pernyataan yang terdengar positif memiliki makna tersembunyi spesifik tentang kinerja karyawan. Sistem ini memastikan kepatuhan hukum sambil memungkinkan penilaian yang jujur.",
@@ -67,8 +74,8 @@
       "additionalOffer": "Magang: Penawaran pekerjaan diperpanjang"
     },
     "titleOptions": {
-      "mr": "Tuan",
-      "ms": "Nyonya",
+      "mr": "Bapak",
+      "ms": "Ibu",
       "dr": "Dr"
     },
     "introductionVariants": {

@@ -1,9 +1,16 @@
 {
   "ui": {
-    "appTitle": "Arbeitszeugnis Generator",
+    "appTitle": "Arbeitszeugnissgenerator",
     "introTitle": "Über dieses Tool",
     "formTitle": "Arbeitszeugnis erstellen",
     "formSubtitle": "Füllen Sie das Formular aus, um Ihr Arbeitszeugnis zu erstellen"
+  },
+  "preview": {
+    "title": "Vollständiges Arbeitszeugnis",
+    "generateButton": "Zeugnis erstellen",
+    "printButton": "Zeugnis drucken",
+    "placeholder": "Klicken Sie auf \"Zeugnis erstellen\", um Ihr vollständiges Arbeitszeugnis zu erstellen.",
+    "letterTitle": "Arbeitszeugnis"
   },
   "intro": {
     "description": "Dieses Tool hilft Ihnen, professionelle Arbeitszeugnisse basierend auf dem deutschen Arbeitszeugnis-System zu erstellen.",

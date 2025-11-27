@@ -150,19 +150,132 @@ footer {
     }
 }
 
+/* Letter Preview Styles */
+.letter-content {
+    min-height: 400px;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.letter-content p {
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.letter-content ul {
+    margin-bottom: 1rem;
+}
+
+.letter-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.letter-header h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.letter-footer {
+    border-top: 1px solid #dee2e6;
+    padding-top: 2rem;
+}
+
+.letter-footer p {
+    margin-bottom: 0.25rem;
+}
+
 /* Print Styles */
 @media print {
-    header, footer, .form-section, .intro-section {
-        display: none;
+    @page {
+        margin: 2cm;
+        size: A4;
     }
     
-    body {
-        background-color: white;
+    /* Hide everything except print-only content */
+    body * {
+        display: none !important;
     }
     
-    .letter-preview {
+    /* Show only the print section and letter preview */
+    body,
+    main,
+    .print-section,
+    .print-only,
+    .print-only * {
         display: block !important;
-        box-shadow: none;
-        border: none;
+    }
+    
+    /* Keep inline elements inline */
+    .print-only strong,
+    .print-only em,
+    .print-only span,
+    .print-only b,
+    .print-only i {
+        display: inline !important;
+    }
+    
+    /* Proper list display */
+    .print-only ul,
+    .print-only ol {
+        display: block !important;
+        list-style-position: inside;
+        padding-left: 0;
+    }
+    
+    .print-only li {
+        display: list-item !important;
+        margin-left: 1.5em;
+    }
+    
+    /* Reset all containers for clean print */
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+    
+    main,
+    .print-section,
+    .print-only {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: white !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    /* Style letter content */
+    .print-only p {
+        margin-bottom: 1rem;
+        text-align: justify;
+    }
+    
+    .print-only .letter-header {
+        margin-bottom: 2rem;
+    }
+    
+    .print-only .letter-body {
+        margin-bottom: 2rem;
+    }
+    
+    .print-only .letter-footer {
+        margin-top: 2rem;
+        border-top: none;
+        padding-top: 1rem;
+    }
+    
+    /* Prevent awkward page breaks */
+    .print-only h2,
+    .print-only h3,
+    .print-only p {
+        page-break-inside: avoid;
+    }
+    
+    /* Hide placeholder text when printing */
+    #preview-placeholder {
+        display: none !important;
     }
 }

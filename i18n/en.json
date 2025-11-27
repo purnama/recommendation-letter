@@ -5,6 +5,13 @@
     "formTitle": "Generate Reference Letter",
     "formSubtitle": "Complete the form below to create your employment reference letter"
   },
+  "preview": {
+    "title": "Complete Reference Letter",
+    "generateButton": "Generate Letter",
+    "printButton": "Print Letter",
+    "placeholder": "Click \"Generate Letter\" to create your complete reference letter.",
+    "letterTitle": "Employment Reference Letter"
+  },
   "intro": {
     "description": "This tool helps you generate professional employment reference letters based on the German Arbeitszeugnis system.",
     "germanSystem": "The German Arbeitszeugnis uses a unique coded language where positive-sounding statements have specific hidden meanings about an employee's performance. This system ensures legal compliance while allowing honest assessments.",
@@ -254,21 +261,21 @@
     },
     "socialVariants": {
       "sehr-gut": {
-        "1": "His behavior towards superiors, colleagues and external parties was always outstanding.",
-        "2": "{title} {lastName} always behaved exemplarily towards superiors, employees and customers. He contributed to excellent and efficient teamwork.",
-        "3": "He was equally valued by superiors, colleagues and customers. He always behaved loyally towards the company and convinced through his personal integrity. His behavior was always exemplary. In contact with customers, {title} {lastName} was characterized by extremely professional demeanor."
+        "1": "{title} {lastName}'s behavior towards superiors, colleagues and external parties was always outstanding.",
+        "2": "{title} {lastName} always behaved exemplarily towards superiors, employees and customers and contributed to excellent and efficient teamwork.",
+        "3": "{title} {lastName} was equally valued by superiors, colleagues and customers. {title} {lastName} always behaved loyally towards the company and convinced through personal integrity. The behavior was always exemplary. In contact with customers, {title} {lastName} was characterized by extremely professional demeanor."
       },
       "gut": {
-        "1": "His behavior towards superiors, colleagues and external parties was always impeccable.",
-        "2": "{title} {lastName} always behaved impeccably towards superiors, employees and customers. He contributed to good and efficient teamwork."
+        "1": "{title} {lastName}'s behavior towards superiors, colleagues and external parties was always impeccable.",
+        "2": "{title} {lastName} always behaved impeccably towards superiors, employees and customers and contributed to good and efficient teamwork."
       },
       "befriedigend": {
-        "1": "His behavior towards superiors, colleagues and external parties was impeccable.",
-        "2": "His behavior towards superiors, colleagues and external parties was always correct."
+        "1": "{title} {lastName}'s behavior towards superiors, colleagues and external parties was impeccable.",
+        "2": "{title} {lastName}'s behavior towards superiors, colleagues and external parties was always correct."
       },
       "ausreichend": {
-        "1": "His behavior towards colleagues and superiors was satisfactory.",
-        "2": "His behavior towards colleagues and superiors was tension-free."
+        "1": "{title} {lastName}'s behavior towards colleagues and superiors was satisfactory.",
+        "2": "{title} {lastName}'s behavior towards colleagues and superiors was tension-free."
       }
     },
     "leavingReasons": {
@@ -280,16 +287,16 @@
     },
     "farewellVariants": {
       "sehr-gut": {
-        "1": "We thank {title} {lastName} for the consistently outstanding cooperation and very much regret losing him as an employee. We wish him all the best for his further professional and personal life and continued success.",
-        "2": "We thank {title} {lastName} for the consistently outstanding performance and very much regret his departure. We are convinced that he will achieve extraordinary successes in the future."
+        "1": "We thank {title} {lastName} for the consistently outstanding cooperation and very much regret this departure. We wish {title} {lastName} all the best for the further professional and personal life and continued success.",
+        "2": "We thank {title} {lastName} for the consistently outstanding performance and very much regret this departure. We are convinced that {title} {lastName} will achieve extraordinary successes in the future."
       },
       "gut": {
-        "1": "We thank {title} {lastName} for his valuable cooperation and regret losing him as an employee. We wish him all the best for his further professional and personal life and continued success.",
-        "2": "We thank {title} {lastName} for the consistently good performance and very much regret his departure. We are convinced that he will achieve extraordinary successes in the future."
+        "1": "We thank {title} {lastName} for the valuable cooperation and regret this departure. We wish {title} {lastName} all the best for the further professional and personal life and continued success.",
+        "2": "We thank {title} {lastName} for the consistently good performance and very much regret this departure. We are convinced that {title} {lastName} will achieve extraordinary successes in the future."
       },
       "befriedigend": {
-        "1": "We thank {title} {lastName} for the performance provided and wish him all the best for the future.",
-        "2": "We thank {title} {lastName} for his work and regret his departure. We are convinced that he will achieve good successes in the future."
+        "1": "We thank {title} {lastName} for the performance provided and wish all the best for the future.",
+        "2": "We thank {title} {lastName} for the work and regret this departure. We are convinced that {title} {lastName} will achieve good successes in the future."
       },
       "ausreichend": {
         "1": "We wish {title} {lastName} all the best for the future.",
@@ -297,8 +304,8 @@
       }
     },
     "additionalPhrases": {
-      "application": "We would be very pleased if he would apply to us for career entry after completing his studies.",
-      "offer": "Since we have always been extremely satisfied with his performance, we have made {title} {lastName} an offer for career entry after completing his studies, and we would be very pleased if he accepts it."
+      "application": "We would be very pleased if {title} {lastName} would apply to us for career entry after completing the studies.",
+      "offer": "Since we have always been extremely satisfied with the performance, we have made {title} {lastName} an offer for career entry after completing the studies, and we would be very pleased if it is accepted."
     }
   },
   "templates": {
