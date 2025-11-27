@@ -41,7 +41,265 @@
   },
   "form": {
     "employeeInfo": "Employee Information",
-    "companyInfo": "Company Information"
+    "companyInfo": "Company Information",
+    "introduction": "Introduction",
+    "companyDescription": "Company Description",
+    "duties": "Job Duties",
+    "labels": {
+      "title": "Title",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "dateOfBirth": "Date of Birth",
+      "placeOfBirth": "Place of Birth",
+      "position": "Position",
+      "department": "Department",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "variant": "Variant",
+      "leavingEmployee": "Resignation by Employee",
+      "leavingMutual": "Mutual Agreement",
+      "leavingEmployer": "Termination by Employer",
+      "leavingOperational": "Operational Reasons",
+      "leavingTemporary": "Fixed Term (Internship)",
+      "additionalApplication": "Intern: Application after graduation desired",
+      "additionalOffer": "Intern: Job offer extended",
+      "example": "Example",
+      "dutiesDescription": "(Here you can describe the employee's duties.)"
+    },
+    "titleOptions": {
+      "mr": "Mr",
+      "ms": "Ms",
+      "dr": "Dr"
+    },
+    "introductionVariants": {
+      "1": "{title} {firstName} {lastName}, born on {dateOfBirth} in {placeOfBirth}, was employed in our company from {startDate} to {endDate} as {position} in the {department} department.",
+      "2": "{title} {firstName} {lastName}, born on {dateOfBirth}, worked in our {department} department as {position} from {startDate} to {endDate}.",
+      "3": "{title} {firstName} {lastName}, born on {dateOfBirth} in {placeOfBirth}, worked for our company from {startDate} to {endDate} as {position} in the {department} department."
+    },
+    "companyExamples": {
+      "1": "Muster GmbH is an automotive supplier based in Musterstadt. Our core products include speed measurement displays. Our customer base consists primarily of German, but also other European automobile manufacturers. With around 200 employees, our company recently achieved sales of around 25 million euros.",
+      "2": "Muster AG, founded in 2007, specializes in backend services in the online gaming sector and has quickly established itself as a leading service provider in this segment. With our two locations in Musterstadt and Beispieldorf, we serve numerous customers of different sizes.",
+      "3": "Our company, Beispiel GmbH & Co. KG, has been producing confectionery and other fast-moving consumer goods since 1960. Our best-known brands include 'Beispielschokolade' and 'Muster-Eis'."
+    },
+    "dutiesVariants": {
+      "1": "His/Her area of responsibility included:",
+      "2": "He/She essentially assumed the following tasks:",
+      "3": "As {position} in the {department} department, {title} {lastName} performed the following duties:"
+    },
+    "performanceRatings": "Performance Ratings",
+    "knowledge": "Professional Knowledge",
+    "willingness": "Willingness to Perform",
+    "workstyle": "Work Approach",
+    "quality": "Work Quality",
+    "resilience": "Resilience",
+    "leadership": "Leadership Style (Supervisory Positions Only)",
+    "overall": "Overall Assessment",
+    "social": "Social Behavior",
+    "leaving": "Reason for Leaving",
+    "farewell": "Farewell Formula",
+    "additional": "Additional Phrases and Formulations",
+    "knowledgeVariants": {
+      "sehr-gut": {
+        "1": "He possesses extremely comprehensive and excellent professional knowledge, which he always applied very confidently and successfully in completing his tasks.",
+        "2": "With his extensive and extremely well-founded professional knowledge, he consistently achieved results that were significantly above average.",
+        "3": "{title} {lastName} possesses extremely comprehensive and very well-founded professional knowledge, which he was always able to put into practice excellently. He also participated in numerous training courses with great success."
+      },
+      "gut": {
+        "1": "He possesses comprehensive and good professional knowledge, which he applied very confidently and successfully in completing his tasks.",
+        "2": "With his extensive and well-founded professional knowledge, he consistently achieved good results.",
+        "3": "{title} {lastName} possesses comprehensive and well-founded professional knowledge, which he was always able to put into practice well."
+      },
+      "befriedigend": {
+        "1": "He possesses solid professional knowledge, which he successfully applied in completing his tasks.",
+        "2": "{title} {lastName} was motivated and showed initiative and commitment even with difficult tasks."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} familiarized himself with the tasks assigned to him in accordance with our expectations.",
+        "2": "{title} {lastName} also showed initiative and commitment."
+      }
+    },
+    "willingnessVariants": {
+      "sehr-gut": {
+        "1": "{title} {lastName} familiarized himself with the tasks assigned to him within a very short time. He pursued the agreed goals sustainably and with the highest success.",
+        "2": "{title} {lastName} was an extremely motivated employee at all times. He approached difficult tasks with great enthusiasm and always found sensible and practical solutions.",
+        "3": "He was highly motivated and showed an extraordinarily high degree of initiative and willingness to perform."
+      },
+      "gut": {
+        "1": "{title} {lastName} familiarized himself with the tasks assigned to him within a short time. He pursued the agreed goals sustainably and successfully.",
+        "2": "{title} {lastName} was a consistently motivated employee. He approached difficult tasks with enthusiasm and found sensible and practical solutions.",
+        "3": "He was very motivated and showed a high degree of initiative and willingness to perform."
+      },
+      "befriedigend": {
+        "1": "{title} {lastName} worked diligently to familiarize himself with the tasks assigned to him and pursued the agreed goals sustainably.",
+        "2": "{title} {lastName} was motivated and showed initiative and commitment even with difficult tasks."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} familiarized himself with the tasks assigned to him in accordance with our expectations.",
+        "2": "{title} {lastName} familiarized himself with the tasks assigned to him in accordance with our expectations."
+      }
+    },
+    "workstyleVariants": {
+      "sehr-gut": {
+        "1": "He was extremely reliable, and his work style was always characterized by very careful planning and systematic approach.",
+        "2": "He carried out all tasks always independently, extremely carefully and in a well-thought-out manner.",
+        "3": "He always worked very efficiently, purposefully and carefully and demonstrated outstanding organizational skills."
+      },
+      "gut": {
+        "1": "He was very reliable, and his work style was always characterized by careful planning and systematic approach.",
+        "2": "With a good eye for the essentials, he always carried out his tasks in a planned, methodical and thorough manner.",
+        "3": "He worked very efficiently, purposefully and carefully and demonstrated good organizational skills."
+      },
+      "befriedigend": {
+        "1": "He was reliable, and his work style was always characterized by planning and systematic approach.",
+        "2": "He carried out his tasks carefully and in a planned manner."
+      },
+      "ausreichend": {
+        "1": "He was reliable and completed the crucial tasks without problems.",
+        "2": "He carried out his tasks with sufficient care and planning."
+      }
+    },
+    "qualityVariants": {
+      "sehr-gut": {
+        "1": "He consistently impressed with qualitatively and quantitatively outstanding results.",
+        "2": "His work results were always of very good quality, even with changing requirements and under very difficult conditions.",
+        "3": "He was an extremely capable employee whose excellent work results consistently convinced both qualitatively and quantitatively."
+      },
+      "gut": {
+        "1": "He consistently delivered qualitatively and quantitatively good results.",
+        "2": "His work results were always of good quality, even with changing requirements and under very difficult conditions.",
+        "3": "He was a capable employee who consistently achieved above-average work results."
+      },
+      "befriedigend": {
+        "1": "The quality of his work results fully met the requirements placed on him.",
+        "2": "His work results were of good quality."
+      },
+      "ausreichend": {
+        "1": "He strived for good results.",
+        "2": "His work results met our minimum requirements."
+      }
+    },
+    "resilienceVariants": {
+      "sehr-gut": {
+        "1": "He was always able to handle the highest time pressure and workload.",
+        "2": "Even in situations with extremely high workload, {title} {lastName} proved to be a very resilient employee and always proceeded in a considered, calm and goal-oriented manner.",
+        "3": "{title} {lastName} was always characterized by high resilience and goal orientation, even in extreme stress situations and under time pressure."
+      },
+      "gut": {
+        "1": "He was well able to handle increased time pressure and workload.",
+        "2": "Even with very high workload, {title} {lastName} proved to be a resilient employee and proceeded in a considered, calm and goal-oriented manner.",
+        "3": "{title} {lastName} was characterized by high resilience and goal orientation even in extreme stress situations."
+      },
+      "befriedigend": {
+        "1": "He was able to handle high time pressure and workload.",
+        "2": "Even with high workload, {title} {lastName} proved to be a resilient employee."
+      },
+      "ausreichend": {
+        "1": "He was able to handle normal time pressure and workload.",
+        "2": "With normal workload, {title} {lastName} proved to be a reliable employee."
+      }
+    },
+    "leadershipVariants": {
+      "sehr-gut": {
+        "1": "{title} {lastName} was considered an outstanding leader. He actively promoted cooperation, supported and informed his employees comprehensively at all times and always delegated tasks and responsibilities to an appropriate extent. He consistently achieved excellent work results.",
+        "2": "{title} {lastName} was a straightforward, respected and caring supervisor. He always excelled at motivating his team and moving his department to the highest effectiveness.",
+        "3": "{title} {lastName} was always a valued role model for his employees. He led his employees in a goal-oriented and objective manner and achieved an exceptional performance increase at a consistently high level as well as a very good team atmosphere."
+      },
+      "gut": {
+        "1": "{title} {lastName} was considered a good leader. He actively promoted cooperation, supported and informed his employees comprehensively and delegated tasks and responsibilities to an appropriate extent. He consistently achieved good work results.",
+        "2": "{title} {lastName} was a straightforward, respected and caring supervisor. He was always good at motivating his team and moving his department to high effectiveness.",
+        "3": "{title} {lastName} was always a role model for his employees. He led his employees in a goal-oriented and objective manner and achieved good performance increases at a consistently high level as well as a good team atmosphere."
+      },
+      "befriedigend": {
+        "1": "{title} {lastName} was considered a leader who knew how to promote his employees, inform them and delegate tasks and responsibilities.",
+        "2": "{title} {lastName} was a straightforward and caring supervisor. He knew how to motivate his team and improve work processes in his department."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} met our expectations in his function as a leader and achieved successes in implemented projects.",
+        "2": "{title} {lastName} was a caring supervisor. He knew how to coordinate the day-to-day business of his department."
+      },
+      "mangelhaft": {
+        "1": "{title} {lastName} as a leader always tried to give clear instructions and coordinate all work.",
+        "2": "{title} {lastName} was a caring supervisor. He always tried to coordinate the day-to-day business of his department."
+      }
+    },
+    "overallVariants": {
+      "sehr-gut": {
+        "1": "{title} {lastName} always completed the tasks assigned to him to our fullest satisfaction.",
+        "2": "{title} {lastName} always completed his tasks to our fullest satisfaction and optimally met our expectations in every respect.",
+        "3": "{title} {lastName} always met our expectations in every respect. We were extremely satisfied with his performance at all times."
+      },
+      "gut": {
+        "1": "{title} {lastName} always completed the tasks assigned to him to our full satisfaction.",
+        "2": "{title} {lastName} always completed his tasks to our full satisfaction and met our expectations well in every respect.",
+        "3": "{title} {lastName} always met our expectations well. We were satisfied with his performance at all times."
+      },
+      "befriedigend": {
+        "1": "{title} {lastName} completed the tasks assigned to him to our full satisfaction.",
+        "2": "{title} {lastName} completed his tasks to our full satisfaction and met our expectations in every respect.",
+        "3": "{title} {lastName} fully met our expectations."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} completed the tasks assigned to him to our satisfaction.",
+        "2": "{title} {lastName} mastered his work area according to the requirements.",
+        "3": "{title} {lastName} met our expectations."
+      },
+      "mangelhaft": {
+        "1": "{title} {lastName} generally fulfilled his tasks to our satisfaction.",
+        "2": "{title} {lastName} largely met our requirements."
+      },
+      "ungenugend": {
+        "1": "{title} {lastName} tried to meet our requirements.",
+        "2": "{title} {lastName} always tried to meet our requirements."
+      }
+    },
+    "socialVariants": {
+      "sehr-gut": {
+        "1": "His behavior towards superiors, colleagues and external parties was always outstanding.",
+        "2": "{title} {lastName} always behaved exemplarily towards superiors, employees and customers. He contributed to excellent and efficient teamwork.",
+        "3": "He was equally valued by superiors, colleagues and customers. He always behaved loyally towards the company and convinced through his personal integrity. His behavior was always exemplary. In contact with customers, {title} {lastName} was characterized by extremely professional demeanor."
+      },
+      "gut": {
+        "1": "His behavior towards superiors, colleagues and external parties was always impeccable.",
+        "2": "{title} {lastName} always behaved impeccably towards superiors, employees and customers. He contributed to good and efficient teamwork."
+      },
+      "befriedigend": {
+        "1": "His behavior towards superiors, colleagues and external parties was impeccable.",
+        "2": "His behavior towards superiors, colleagues and external parties was always correct."
+      },
+      "ausreichend": {
+        "1": "His behavior towards colleagues and superiors was satisfactory.",
+        "2": "His behavior towards colleagues and superiors was tension-free."
+      }
+    },
+    "leavingReasons": {
+      "employee": "{title} {lastName} is leaving our company at his own request.",
+      "mutual": "{title} {lastName} is leaving our company by mutual agreement.",
+      "employer": "{title} {lastName} is leaving our company on {endDate}.",
+      "operational": "The employment relationship ends for operational reasons on {endDate}.",
+      "temporary": "{title} {lastName} is leaving our company after the agreed term has expired."
+    },
+    "farewellVariants": {
+      "sehr-gut": {
+        "1": "We thank {title} {lastName} for the consistently outstanding cooperation and very much regret losing him as an employee. We wish him all the best for his further professional and personal life and continued success.",
+        "2": "We thank {title} {lastName} for the consistently outstanding performance and very much regret his departure. We are convinced that he will achieve extraordinary successes in the future."
+      },
+      "gut": {
+        "1": "We thank {title} {lastName} for his valuable cooperation and regret losing him as an employee. We wish him all the best for his further professional and personal life and continued success.",
+        "2": "We thank {title} {lastName} for the consistently good performance and very much regret his departure. We are convinced that he will achieve extraordinary successes in the future."
+      },
+      "befriedigend": {
+        "1": "We thank {title} {lastName} for the performance provided and wish him all the best for the future.",
+        "2": "We thank {title} {lastName} for his work and regret his departure. We are convinced that he will achieve good successes in the future."
+      },
+      "ausreichend": {
+        "1": "We wish {title} {lastName} all the best for the future.",
+        "2": "We thank {title} {lastName} for the cooperation."
+      }
+    },
+    "additionalPhrases": {
+      "application": "We would be very pleased if he would apply to us for career entry after completing his studies.",
+      "offer": "Since we have always been extremely satisfied with his performance, we have made {title} {lastName} an offer for career entry after completing his studies, and we would be very pleased if he accepts it."
+    }
   },
   "templates": {
     "opening": "This is to certify that {name} was employed at {company} from {startDate} to {endDate}.",

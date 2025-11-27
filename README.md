@@ -4,7 +4,7 @@ A pure HTML/CSS/JavaScript web application for generating professional employmen
 
 ## Features
 
-- 🌍 Bilingual support (English & Indonesian)
+- 🌍 Multilingual support (English, Indonesian & German)
 - 📝 German Arbeitszeugnis coded language system
 - 💾 Auto-save with localStorage
 - 🖨️ Print and PDF export capabilities
@@ -30,7 +30,7 @@ recommendation-letter/
 ## How to Use
 
 1. Open `index.html` in a web browser
-2. Select your preferred language (English/Indonesian)
+2. Select your preferred language (English/Indonesian/German)
 3. Fill in the employee and company information
 4. Select performance ratings for each category
 5. Preview the generated letter

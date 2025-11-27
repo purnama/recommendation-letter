@@ -1,0 +1,308 @@
+{
+  "ui": {
+    "appTitle": "Arbeitszeugnis Generator",
+    "introTitle": "Über dieses Tool",
+    "formTitle": "Arbeitszeugnis erstellen",
+    "formSubtitle": "Füllen Sie das Formular aus, um Ihr Arbeitszeugnis zu erstellen"
+  },
+  "intro": {
+    "description": "Dieses Tool hilft Ihnen, professionelle Arbeitszeugnisse basierend auf dem deutschen Arbeitszeugnis-System zu erstellen.",
+    "germanSystem": "Das deutsche Arbeitszeugnis verwendet eine einzigartige verschlüsselte Sprache, bei der scheinbar positive Aussagen spezifische versteckte Bedeutungen über die Leistung eines Mitarbeiters haben. Dieses System gewährleistet die rechtliche Einhaltung und ermöglicht gleichzeitig ehrliche Bewertungen.",
+    "howItWorksTitle": "So funktioniert es:",
+    "howItWorks": [
+      "Geben Sie die Mitarbeiter- und Unternehmensinformationen ein",
+      "Wählen Sie Leistungsbewertungen für verschiedene Kategorien",
+      "Das System generiert automatisch die entsprechende verschlüsselte Sprache",
+      "Vorschau anzeigen und Ihr Arbeitszeugnis herunterladen oder drucken"
+    ],
+    "ratingsTitle": "Das Bewertungssystem verstehen:"
+  },
+  "ratings": {
+    "veryGood": {
+      "label": "Sehr gut (1)",
+      "description": "Herausragende Leistung, übertrifft die Erwartungen"
+    },
+    "good": {
+      "label": "Gut (2)",
+      "description": "Starke Leistung, erfüllt alle Erwartungen"
+    },
+    "satisfactory": {
+      "label": "Befriedigend (3)",
+      "description": "Akzeptable Leistung, erfüllt grundlegende Anforderungen"
+    },
+    "adequate": {
+      "label": "Ausreichend (4)",
+      "description": "Unterdurchschnittliche Leistung, Mindestanforderungen erfüllt"
+    },
+    "poor": {
+      "label": "Mangelhaft (5)",
+      "description": "Unbefriedigende Leistung, erhebliche Probleme"
+    }
+  },
+  "form": {
+    "employeeInfo": "Angaben zum Mitarbeiter",
+    "companyInfo": "Angaben zum Unternehmen",
+    "introduction": "Einleitung",
+    "companyDescription": "Firmenbeschreibung",
+    "duties": "Tätigkeiten",
+    "labels": {
+      "title": "Anrede",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "dateOfBirth": "Geburtsdatum",
+      "placeOfBirth": "Geburtsort",
+      "position": "Position",
+      "department": "Bereich",
+      "startDate": "Eintrittsdatum",
+      "endDate": "Austrittsdatum",
+      "variant": "Variante",
+      "example": "Beispiel",
+      "dutiesDescription": "(Hier können Sie die Tätigkeiten des Mitarbeiters beschreiben.)",
+      "leavingEmployee": "Kündigung durch Arbeitnehmer",
+      "leavingMutual": "Aufhebung",
+      "leavingEmployer": "Kündigung durch Arbeitgeber",
+      "leavingOperational": "Betriebsbedingte Kündigung",
+      "leavingTemporary": "Frist (z.B. Praktikanten)",
+      "additionalApplication": "Praktikant: Bewerbung nach Abschluss erwünscht",
+      "additionalOffer": "Praktikant: Einstiegsangebot"
+    },
+    "titleOptions": {
+      "mr": "Herr",
+      "ms": "Frau",
+      "dr": "Dr"
+    },
+    "introductionVariants": {
+      "1": "{title} {firstName} {lastName}, geboren am {dateOfBirth} in {placeOfBirth}, war vom {startDate} bis {endDate} als {position} im Bereich {department} in unserem Unternehmen beschäftigt.",
+      "2": "{title} {firstName} {lastName}, geboren am {dateOfBirth}, war vom {startDate} bis {endDate} in unserer {department}-Abteilung als {position} tätig.",
+      "3": "{title} {firstName} {lastName}, geboren am {dateOfBirth} in {placeOfBirth}, hat vom {startDate} bis {endDate} als {position} in der Abteilung {department} für unser Unternehmen gearbeitet."
+    },
+    "companyExamples": {
+      "1": "Die Muster GmbH ist ein Automobilzulieferer mit Sitz in Musterstadt. Zu den Kernprodukten gehören vor allem Geschwindigkeitsmessanzeigen. Unser Kundenkreis besteht insbesondere aus deutschen, aber auch anderen europäischen Automobilherstellern. Mit rund 200 Mitarbeitern erzielte unser Unternehmen zuletzt rund 25 Millionen Euro Umsatz.",
+      "2": "Die Muster AG, gegründet 2007, spezialisiert sich auf Backend-Services im Online-Gaming-Bereich und hat sich innerhalb kürzester Zeit zu einem führenden Dienstleister in diesem Segment etabliert. Mit unseren zwei Standorten in Musterstadt und Beispieldorf bedienen wir zahlreiche Kunden unterschiedlicher Größe.",
+      "3": "Unser Unternehmen, die Beispiel GmbH & Co. KG, stellt seit 1960 Süßwaren und andere schnelldrehende Konsumgüter her. Zu unseren bekanntesten Marken gehören die 'Beispielschokolade' und das 'Muster-Eis'."
+    },
+    "dutiesVariants": {
+      "1": "Sein Aufgabengebiet umfasste:",
+      "2": "Er übernahm im Wesentlichen die folgenden Aufgaben:",
+      "3": "Als {position} in der Abteilung {department} führte {title} {lastName} die folgenden Tätigkeiten aus:"
+    },
+    "performanceRatings": "Leistungsbewertungen",
+    "knowledge": "Fachwissen",
+    "willingness": "Leistungsbereitschaft",
+    "workstyle": "Arbeitsweise",
+    "quality": "Arbeitsqualität",
+    "resilience": "Belastungsfähigkeit",
+    "leadership": "Führungsstil (nur bei leitenden Angestellten)",
+    "overall": "Gesamturteil",
+    "social": "Soziales Verhalten",
+    "leaving": "Austrittsgrund",
+    "farewell": "Abschiedsformel",
+    "additional": "Sonstige Zusätze und Formulierungen",
+    "knowledgeVariants": {
+      "sehr-gut": {
+        "1": "Er verfügt über ein äußerst umfassendes und hervorragendes Fachwissen, das er zur Bewältigung seiner Aufgaben stets sehr sicher und erfolgreich einsetzte.",
+        "2": "Mit seinem umfangreichen und äußerst fundierten Fachwissen erzielte er stets deutlich überdurchschnittliche Erfolge.",
+        "3": "{title} {lastName} verfügt über ein äußerst umfassendes und sehr fundiertes Fachwissen, das er jederzeit hervorragend in die Praxis umzusetzen wusste. Er nahm zudem mit großem Erfolg an zahlreichen Fortbildungen teil."
+      },
+      "gut": {
+        "1": "Er verfügt über ein umfassendes und gutes Fachwissen, das er zur Bewältigung seiner Aufgaben sehr sicher und erfolgreich einsetzte.",
+        "2": "Mit seinem umfangreichen und fundierten Fachwissen erzielte er stets gute Erfolge.",
+        "3": "{title} {lastName} verfügt über ein umfassendes und fundiertes Fachwissen, das er jederzeit gut in die Praxis umzusetzen wusste."
+      },
+      "befriedigend": {
+        "1": "Er verfügt über ein solides Fachwissen, das er zur Bewältigung seiner Aufgaben erfolgreich einsetzte.",
+        "2": "{title} {lastName} war motiviert und zeigte auch bei schwierigen Aufgaben Initiative und Engagement."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} hat sich unseren Erwartungen entsprechend in den ihm gestellten Aufgabenbereich eingearbeitet.",
+        "2": "{title} {lastName} zeigte auch Initiative und Engagement."
+      }
+    },
+    "willingnessVariants": {
+      "sehr-gut": {
+        "1": "{title} {lastName} hat sich innerhalb kürzester Zeit in den ihm gestellten Aufgabenbereich eingearbeitet. Er verfolgte die vereinbarten Ziele nachhaltig und mit höchstem Erfolg.",
+        "2": "{title} {lastName} war ein stets äußerst motivierter Mitarbeiter. Schwierige Aufgaben ging er mit großem Elan an und fand dabei immer sinnvolle und praktikable Lösungen.",
+        "3": "Er war hochmotiviert und zeigte ein außerordentlich hohes Maß an Initiative und Leistungsbereitschaft."
+      },
+      "gut": {
+        "1": "{title} {lastName} hat sich innerhalb kurzer Zeit in den ihm gestellten Aufgabenbereich eingearbeitet. Er verfolgte die vereinbarten Ziele nachhaltig und erfolgreich.",
+        "2": "{title} {lastName} war ein stets motivierter Mitarbeiter. Schwierige Aufgaben ging er mit Elan an und fand dabei sinnvolle und praktikable Lösungen.",
+        "3": "Er war sehr motiviert und zeigte ein hohes Maß an Initiative und Leistungsbereitschaft."
+      },
+      "befriedigend": {
+        "1": "{title} {lastName} hat sich engagiert in den ihm gestellten Aufgabenbereich eingearbeitet und verfolgte die vereinbarten Ziele nachhaltig.",
+        "2": "{title} {lastName} war motiviert und zeigte auch bei schwierigen Aufgaben Initiative und Engagement."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} hat sich unseren Erwartungen entsprechend in den ihm gestellten Aufgabenbereich eingearbeitet.",
+        "2": "{title} {lastName} hat sich unseren Erwartungen entsprechend in den ihm gestellten Aufgabenbereich eingearbeitet."
+      }
+    },
+    "workstyleVariants": {
+      "sehr-gut": {
+        "1": "Er war äußerst zuverlässig, und sein Arbeitsstil war stets geprägt durch sehr sorgfältige Planung und Systematik.",
+        "2": "Er führte alle Aufgaben stets selbständig, äußerst sorgfältig und planvoll durchdacht aus.",
+        "3": "Er arbeitete stets sehr effizient, zielstrebig und sorgfältig und bewies ein herausragendes Organisationsgeschick."
+      },
+      "gut": {
+        "1": "Er war sehr zuverlässig, und sein Arbeitsstil war stets geprägt durch sorgfältige Planung und Systematik.",
+        "2": "Mit einem guten Blick für das Wesentliche führte er seine Aufgaben immer planvoll, methodisch und gründlich aus.",
+        "3": "Er arbeitete sehr effizient, zielstrebig und sorgfältig und bewies ein gutes Organisationsgeschick."
+      },
+      "befriedigend": {
+        "1": "Er war zuverlässig, und sein Arbeitsstil war stets geprägt durch Planung und Systematik.",
+        "2": "Er führte seine Aufgaben sorgfältig und planvoll aus."
+      },
+      "ausreichend": {
+        "1": "Er war zuverlässig und erledigte die entscheidenden Aufgaben problemlos.",
+        "2": "Er führte seine Aufgaben mit ausreichender Sorgfalt und Planung aus."
+      }
+    },
+    "qualityVariants": {
+      "sehr-gut": {
+        "1": "Er beeindruckte stets durch qualitativ und quantitativ hervorragende Ergebnisse.",
+        "2": "Seine Arbeitsergebnisse waren, auch bei wechselnden Anforderungen und unter sehr schwierigen Bedingungen, stets von sehr guter Qualität.",
+        "3": "Er war ein äußerst leistungsfähiger Mitarbeiter, dessen hervorragende Arbeitsergebnisse stets sowohl in qualitativer als quantitativer Hinsicht überzeugten."
+      },
+      "gut": {
+        "1": "Er lieferte stets qualitativ und quantitativ gute Ergebnisse.",
+        "2": "Seine Arbeitsergebnisse waren, auch bei wechselnden Anforderungen und unter sehr schwierigen Bedingungen, stets von guter Qualität.",
+        "3": "Er war ein leistungsfähiger Mitarbeiter, der stets überdurchschnittliche Arbeitsergebnisse erzielte."
+      },
+      "befriedigend": {
+        "1": "Die Qualität seiner Arbeitsergebnisse erfüllte in vollem Umfang die an ihn gestellten Anforderungen.",
+        "2": "Seine Arbeitsergebnisse waren von guter Qualität."
+      },
+      "ausreichend": {
+        "1": "Er strebte gute Ergebnisse an.",
+        "2": "Seine Arbeitsergebnisse entsprachen unseren Mindestanforderungen."
+      }
+    },
+    "resilienceVariants": {
+      "sehr-gut": {
+        "1": "Dabei war er auch höchstem Zeitdruck und Arbeitsaufwand stets gewachsen.",
+        "2": "Auch in Situationen mit extrem hohem Arbeitsanfall erwies sich {title} {lastName} als sehr belastbarer Mitarbeiter und ging jederzeit überlegt, ruhig und zielorientiert vor.",
+        "3": "{title} {lastName} zeichnete sich auch in extremen Stresssituationen und unter Zeitdruck stets durch hohe Belastbarkeit und Zielorientierung aus."
+      },
+      "gut": {
+        "1": "Dabei war er auch erhöhtem Zeitdruck und Arbeitsaufwand gut gewachsen.",
+        "2": "Auch bei sehr hohem Arbeitsanfall erwies sich {title} {lastName} als belastbarer Mitarbeiter und ging überlegt, ruhig und zielorientiert vor.",
+        "3": "{title} {lastName} zeichnete sich auch in extremen Stresssituationen durch hohe Belastbarkeit und Zielorientierung aus."
+      },
+      "befriedigend": {
+        "1": "Dabei war er auch hohem Zeitdruck und Arbeitsaufwand gewachsen.",
+        "2": "Auch bei hohem Arbeitsanfall erwies sich {title} {lastName} als belastbarer Mitarbeiter."
+      },
+      "ausreichend": {
+        "1": "Dabei war er üblichem Zeitdruck und Arbeitsaufwand gewachsen.",
+        "2": "Bei üblichem Arbeitsanfall erwies sich {title} {lastName} als zuverlässiger Mitarbeiter."
+      }
+    },
+    "leadershipVariants": {
+      "sehr-gut": {
+        "1": "{title} {lastName} galt als hervorragende Führungskraft. Er förderte aktiv die Zusammenarbeit, förderte und informierte seine Mitarbeiter jederzeit umfassend und delegierte Aufgaben und Verantwortungen stets in angemessenem Umfang. So erreichte er stets ein hervorragendes Arbeitsergebnis.",
+        "2": "{title} {lastName} war ein geradliniger sowie geachteter und fürsorglicher Vorgesetzter. Er verstand es immer ausgezeichnet, sein Team zu motivieren und seine Abteilung zu höchster Effektivität zu bewegen.",
+        "3": "{title} {lastName} war für seine Mitarbeiter stets ein geschätztes Vorbild. Er führte seine Mitarbeiter zielorientiert und sachlich und erreichte eine außergewöhnliche Leistungssteigerung auf durchgängig hohem Niveau sowie eine sehr gute Teamatmosphäre."
+      },
+      "gut": {
+        "1": "{title} {lastName} galt als gute Führungskraft. Er förderte aktiv die Zusammenarbeit, förderte und informierte seine Mitarbeiter umfassend und delegierte Aufgaben und Verantwortungen in angemessenem Umfang. So erreichte er stets ein gutes Arbeitsergebnis.",
+        "2": "{title} {lastName} war ein geradliniger sowie geachteter und fürsorglicher Vorgesetzter. Er verstand es immer gut, sein Team zu motivieren und seine Abteilung zu hoher Effektivität zu bewegen.",
+        "3": "{title} {lastName} war für seine Mitarbeiter stets ein Vorbild. Er führte seine Mitarbeiter zielorientiert und sachlich und erreichte eine gute Leistungssteigerung auf durchgängig hohem Niveau sowie eine gute Teamatmosphäre."
+      },
+      "befriedigend": {
+        "1": "{title} {lastName} galt als Führungskraft, die es verstand, seine Mitarbeiter zu fördern, zu informieren und Aufgaben sowie Verantwortung zu delegieren.",
+        "2": "{title} {lastName} war ein geradliniger sowie fürsorglicher Vorgesetzter. Er verstand es, sein Team zu motivieren und Arbeitsprozesse in seiner Abteilung zu verbessern."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} erfüllte in seiner Funktion als Führungskraft unsere Erwartungen und erzielte Erfolge bei umgesetzten Projekten.",
+        "2": "{title} {lastName} war ein fürsorglicher Vorgesetzter. Er verstand es, das Tagesgeschäft seiner Abteilung zu koordinieren."
+      },
+      "mangelhaft": {
+        "1": "{title} {lastName} war als Führungskraft immer bemüht, klare Anweisungen zu geben und alle Arbeiten zu koordinieren.",
+        "2": "{title} {lastName} war ein fürsorglicher Vorgesetzter. Er bemühte sich stets, das Tagesgeschäft seiner Abteilung zu koordinieren."
+      }
+    },
+    "overallVariants": {
+      "sehr-gut": {
+        "1": "{title} {lastName} hat die ihm übertragenen Aufgaben stets zu unserer vollsten Zufriedenheit erledigt.",
+        "2": "{title} {lastName} hat seine Aufgaben stets zu unserer vollsten Zufriedenheit erledigt und unseren Erwartungen in jeder Hinsicht optimal entsprochen.",
+        "3": "{title} {lastName} hat unsere Erwartungen stets in jeder Hinsicht erfüllt. Wir waren mit seinen Leistungen jederzeit äußerst zufrieden."
+      },
+      "gut": {
+        "1": "{title} {lastName} hat die ihm übertragenen Aufgaben stets zu unserer vollen Zufriedenheit erledigt.",
+        "2": "{title} {lastName} hat seine Aufgaben stets zu unserer vollen Zufriedenheit erledigt und unseren Erwartungen in jeder Hinsicht gut entsprochen.",
+        "3": "{title} {lastName} hat unsere Erwartungen stets gut erfüllt. Wir waren mit seinen Leistungen jederzeit zufrieden."
+      },
+      "befriedigend": {
+        "1": "{title} {lastName} hat die ihm übertragenen Aufgaben zu unserer vollen Zufriedenheit erledigt.",
+        "2": "{title} {lastName} hat seine Aufgaben zu unserer vollen Zufriedenheit erledigt und unseren Erwartungen in jeder Hinsicht entsprochen.",
+        "3": "{title} {lastName} hat unseren Erwartungen voll entsprochen."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} hat die ihm übertragenen Aufgaben zu unserer Zufriedenheit erledigt.",
+        "2": "{title} {lastName} beherrschte seinen Arbeitsbereich entsprechend den Anforderungen.",
+        "3": "{title} {lastName} hat unseren Erwartungen entsprochen."
+      },
+      "mangelhaft": {
+        "1": "{title} {lastName} erfüllte seine Aufgaben im Allgemeinen zu unserer Zufriedenheit.",
+        "2": "{title} {lastName} hat weitestgehend unseren Anforderungen entsprochen."
+      },
+      "ungenugend": {
+        "1": "{title} {lastName} bemühte sich, unseren Anforderungen zu entsprechen.",
+        "2": "{title} {lastName} war stets bemüht, unseren Anforderungen gerecht zu werden."
+      }
+    },
+    "socialVariants": {
+      "sehr-gut": {
+        "1": "Sein Verhalten gegenüber Vorgesetzten, Kollegen und Externen war stets hervorragend.",
+        "2": "Gegenüber Vorgesetzten, Mitarbeitern und Kunden verhielt {title} {lastName} sich stets vorbildlich. Er trug zu einer hervorragenden und effizienten Teamarbeit bei.",
+        "3": "Von Vorgesetzten, Kollegen und Kunden wurde er gleichermaßen geschätzt. Er verhielt sich jederzeit loyal gegenüber dem Unternehmen und überzeugte durch seine persönliche Integrität. Sein Verhalten war immer vorbildlich. Im Kontakt mit Kunden zeichnete {title} {lastName} sich durch äußerst professionelles Auftreten aus."
+      },
+      "gut": {
+        "1": "Sein Verhalten gegenüber Vorgesetzten, Kollegen und Externen war stets einwandfrei.",
+        "2": "Gegenüber Vorgesetzten, Mitarbeitern und Kunden verhielt {title} {lastName} sich stets einwandfrei. Er trug zu einer guten und effizienten Teamarbeit bei."
+      },
+      "befriedigend": {
+        "1": "Sein Verhalten gegenüber Vorgesetzten, Kollegen und Externen war einwandfrei.",
+        "2": "Sein Verhalten gegenüber Vorgesetzten, Kollegen und Externen war stets korrekt."
+      },
+      "ausreichend": {
+        "1": "Sein Verhalten gegenüber Kollegen und Vorgesetzten war zufriedenstellend.",
+        "2": "Sein Verhalten gegenüber Kollegen und Vorgesetzten war spannungsfrei."
+      }
+    },
+    "leavingReasons": {
+      "employee": "{title} {lastName} verlässt unser Unternehmen auf eigenen Wunsch.",
+      "mutual": "{title} {lastName} verlässt unser Unternehmen im gegenseitigen Einvernehmen.",
+      "employer": "{title} {lastName} verlässt unser Unternehmen zum {endDate}.",
+      "operational": "Das Arbeitsverhältnis endet aus betriebsbedingten Gründen zum {endDate}.",
+      "temporary": "{title} {lastName} verlässt unser Unternehmen nach Ablauf der vereinbarten Frist."
+    },
+    "farewellVariants": {
+      "sehr-gut": {
+        "1": "Wir danken {title} {lastName} für die stets hervorragende Zusammenarbeit und bedauern es sehr, ihn als Mitarbeiter zu verlieren. Für seinen weiteren Berufs- und Lebensweg wünschen wir ihm alles Gute und auch weiterhin viel Erfolg.",
+        "2": "Wir danken {title} {lastName} für die stets hervorragenden Leistungen und bedauern sein Ausscheiden sehr. Wir sind davon überzeugt, dass er auch in der Zukunft außerordentliche Erfolge erzielen wird."
+      },
+      "gut": {
+        "1": "Wir danken {title} {lastName} für seine wertvolle Mitarbeit und bedauern es, ihn als Mitarbeiter zu verlieren. Für seinen weiteren Berufs- und Lebensweg wünschen wir ihm alles Gute und auch weiterhin viel Erfolg.",
+        "2": "Wir danken {title} {lastName} für die stets guten Leistungen und bedauern sein Ausscheiden sehr. Wir sind davon überzeugt, dass er auch in der Zukunft außerordentliche Erfolge erzielen wird."
+      },
+      "befriedigend": {
+        "1": "Wir danken {title} {lastName} für die erbrachte Leistung und wünschen ihm für die Zukunft weiterhin alles Gute.",
+        "2": "Wir danken {title} {lastName} für sein Wirken und bedauern sein Ausscheiden. Wir sind überzeugt, dass er auch in der Zukunft gute Erfolge erzielen wird."
+      },
+      "ausreichend": {
+        "1": "Wir wünschen {title} {lastName} für die Zukunft alles Gute.",
+        "2": "Wir danken {title} {lastName} für die Zusammenarbeit."
+      }
+    },
+    "additionalPhrases": {
+      "application": "Wir würden uns sehr freuen, wenn er sich nach Abschluss seines Studiums bei uns für den Berufseinstieg bewerben würde.",
+      "offer": "Da wir mit seinen Leistungen stets in höchstem Maße zufrieden waren, haben wir {title} {lastName} ein Angebot für den Berufseinstieg nach Abschluss des Studiums unterbreitet, und wir würden uns sehr freuen, wenn er es annimmt."
+    }
+  },
+  "templates": {
+    "opening": "Hiermit bestätigen wir, dass {name} vom {startDate} bis {endDate} bei {company} beschäftigt war.",
+    "closing": "Wir wünschen {name} für die Zukunft alles Gute."
+  }
+}

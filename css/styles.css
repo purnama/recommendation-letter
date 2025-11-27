@@ -67,12 +67,57 @@ header {
 /* Form Styles */
 .form-section {
     margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.section-title {
+    color: var(--dark-color);
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.variant-selection {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+}
+
+.form-check-inline {
+    margin-right: 1.5rem;
+}
+
+/* Performance Ratings */
+.performance-category {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.rating-options .form-check {
+    margin-bottom: 0.5rem;
+}
+
+.variant-options {
+    padding: 0.75rem;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+}
+
+.variant-options .form-check {
+    margin-bottom: 0.5rem;
 }
 
 .form-label {
     font-weight: 500;
     color: var(--dark-color);
     margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .form-control, .form-select {

@@ -41,7 +41,265 @@
   },
   "form": {
     "employeeInfo": "Informasi Karyawan",
-    "companyInfo": "Informasi Perusahaan"
+    "companyInfo": "Informasi Perusahaan",
+    "introduction": "Pendahuluan",
+    "companyDescription": "Deskripsi Perusahaan",
+    "duties": "Tugas Pekerjaan",
+    "labels": {
+      "title": "Gelar",
+      "firstName": "Nama Depan",
+      "lastName": "Nama Belakang",
+      "dateOfBirth": "Tanggal Lahir",
+      "placeOfBirth": "Tempat Lahir",
+      "position": "Posisi",
+      "department": "Departemen",
+      "startDate": "Tanggal Masuk",
+      "endDate": "Tanggal Keluar",
+      "variant": "Varian",
+      "example": "Contoh",
+      "dutiesDescription": "(Di sini Anda dapat menjelaskan tugas karyawan.)",
+      "leavingEmployee": "Pengunduran diri oleh Karyawan",
+      "leavingMutual": "Kesepakatan Bersama",
+      "leavingEmployer": "Pemutusan oleh Pemberi Kerja",
+      "leavingOperational": "Alasan Operasional",
+      "leavingTemporary": "Jangka Waktu Tetap (Magang)",
+      "additionalApplication": "Magang: Aplikasi setelah kelulusan diinginkan",
+      "additionalOffer": "Magang: Penawaran pekerjaan diperpanjang"
+    },
+    "titleOptions": {
+      "mr": "Tuan",
+      "ms": "Nyonya",
+      "dr": "Dr"
+    },
+    "introductionVariants": {
+      "1": "{title} {firstName} {lastName}, lahir pada {dateOfBirth} di {placeOfBirth}, bekerja di perusahaan kami dari {startDate} hingga {endDate} sebagai {position} di departemen {department}.",
+      "2": "{title} {firstName} {lastName}, lahir pada {dateOfBirth}, bekerja di departemen {department} kami sebagai {position} dari {startDate} hingga {endDate}.",
+      "3": "{title} {firstName} {lastName}, lahir pada {dateOfBirth} di {placeOfBirth}, bekerja untuk perusahaan kami dari {startDate} hingga {endDate} sebagai {position} di departemen {department}."
+    },
+    "companyExamples": {
+      "1": "Muster GmbH adalah pemasok otomotif yang berbasis di Musterstadt. Produk inti kami mencakup tampilan pengukuran kecepatan. Basis pelanggan kami terutama terdiri dari produsen mobil Jerman, tetapi juga Eropa lainnya. Dengan sekitar 200 karyawan, perusahaan kami baru-baru ini mencapai penjualan sekitar 25 juta euro.",
+      "2": "Muster AG, didirikan pada tahun 2007, mengkhususkan diri dalam layanan backend di sektor permainan online dan dengan cepat memantapkan diri sebagai penyedia layanan terkemuka di segmen ini. Dengan dua lokasi kami di Musterstadt dan Beispieldorf, kami melayani berbagai pelanggan dengan ukuran yang berbeda.",
+      "3": "Perusahaan kami, Beispiel GmbH & Co. KG, telah memproduksi manisan dan barang konsumsi cepat lainnya sejak tahun 1960. Merek kami yang paling terkenal termasuk 'Beispielschokolade' dan 'Muster-Eis'."
+    },
+    "dutiesVariants": {
+      "1": "Bidang tanggung jawabnya meliputi:",
+      "2": "Dia pada dasarnya mengambil tugas-tugas berikut:",
+      "3": "Sebagai {position} di departemen {department}, {title} {lastName} melakukan tugas-tugas berikut:"
+    },
+    "performanceRatings": "Penilaian Kinerja",
+    "knowledge": "Pengetahuan Profesional",
+    "willingness": "Kesediaan Bekerja",
+    "workstyle": "Cara Kerja",
+    "quality": "Kualitas Kerja",
+    "resilience": "Ketahanan",
+    "leadership": "Gaya Kepemimpinan (Hanya untuk Posisi Supervisor)",
+    "overall": "Penilaian Keseluruhan",
+    "social": "Perilaku Sosial",
+    "leaving": "Alasan Keluar",
+    "farewell": "Formula Perpisahan",
+    "additional": "Frasa dan Formulasi Tambahan",
+    "knowledgeVariants": {
+      "sehr-gut": {
+        "1": "Dia memiliki pengetahuan profesional yang sangat komprehensif dan luar biasa, yang selalu ia terapkan dengan sangat percaya diri dan sukses dalam menyelesaikan tugasnya.",
+        "2": "Dengan pengetahuan profesionalnya yang luas dan sangat mendalam, ia secara konsisten mencapai hasil yang jauh di atas rata-rata.",
+        "3": "{title} {lastName} memiliki pengetahuan profesional yang sangat komprehensif dan sangat mendalam, yang selalu dapat ia praktikkan dengan sangat baik. Ia juga berpartisipasi dalam berbagai pelatihan dengan kesuksesan besar."
+      },
+      "gut": {
+        "1": "Dia memiliki pengetahuan profesional yang komprehensif dan baik, yang ia terapkan dengan sangat percaya diri dan sukses dalam menyelesaikan tugasnya.",
+        "2": "Dengan pengetahuan profesionalnya yang luas dan mendalam, ia secara konsisten mencapai hasil yang baik.",
+        "3": "{title} {lastName} memiliki pengetahuan profesional yang komprehensif dan mendalam, yang selalu dapat ia praktikkan dengan baik."
+      },
+      "befriedigend": {
+        "1": "Dia memiliki pengetahuan profesional yang solid, yang ia terapkan dengan sukses dalam menyelesaikan tugasnya.",
+        "2": "{title} {lastName} termotivasi dan menunjukkan inisiatif dan komitmen bahkan dalam tugas-tugas yang sulit."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} membiasakan diri dengan tugas-tugas yang diberikan kepadanya sesuai dengan harapan kami.",
+        "2": "{title} {lastName} juga menunjukkan inisiatif dan komitmen."
+      }
+    },
+    "willingnessVariants": {
+      "sehr-gut": {
+        "1": "{title} {lastName} membiasakan diri dengan tugas-tugas yang diberikan kepadanya dalam waktu yang sangat singkat. Ia mengejar tujuan yang disepakati secara berkelanjutan dan dengan kesuksesan tertinggi.",
+        "2": "{title} {lastName} adalah karyawan yang selalu sangat termotivasi. Ia mendekati tugas-tugas sulit dengan antusiasme besar dan selalu menemukan solusi yang masuk akal dan praktis.",
+        "3": "Dia sangat termotivasi dan menunjukkan tingkat inisiatif dan kesediaan bekerja yang luar biasa tinggi."
+      },
+      "gut": {
+        "1": "{title} {lastName} membiasakan diri dengan tugas-tugas yang diberikan kepadanya dalam waktu singkat. Ia mengejar tujuan yang disepakati secara berkelanjutan dan berhasil.",
+        "2": "{title} {lastName} adalah karyawan yang konsisten termotivasi. Ia mendekati tugas-tugas sulit dengan antusiasme dan menemukan solusi yang masuk akal dan praktis.",
+        "3": "Dia sangat termotivasi dan menunjukkan tingkat inisiatif dan kesediaan bekerja yang tinggi."
+      },
+      "befriedigend": {
+        "1": "{title} {lastName} bekerja dengan tekun untuk membiasakan diri dengan tugas-tugas yang diberikan kepadanya dan mengejar tujuan yang disepakati secara berkelanjutan.",
+        "2": "{title} {lastName} termotivasi dan menunjukkan inisiatif dan komitmen bahkan dalam tugas-tugas yang sulit."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} membiasakan diri dengan tugas-tugas yang diberikan kepadanya sesuai dengan harapan kami.",
+        "2": "{title} {lastName} membiasakan diri dengan tugas-tugas yang diberikan kepadanya sesuai dengan harapan kami."
+      }
+    },
+    "workstyleVariants": {
+      "sehr-gut": {
+        "1": "Dia sangat dapat diandalkan, dan gaya kerjanya selalu ditandai dengan perencanaan yang sangat hati-hati dan pendekatan sistematis.",
+        "2": "Dia melaksanakan semua tugas selalu secara mandiri, sangat hati-hati dan dengan cara yang dipikirkan dengan matang.",
+        "3": "Dia selalu bekerja sangat efisien, terarah dan hati-hati dan menunjukkan keterampilan organisasi yang luar biasa."
+      },
+      "gut": {
+        "1": "Dia sangat dapat diandalkan, dan gaya kerjanya selalu ditandai dengan perencanaan yang hati-hati dan pendekatan sistematis.",
+        "2": "Dengan pandangan yang baik untuk hal-hal penting, dia selalu melaksanakan tugasnya secara terencana, metodis dan menyeluruh.",
+        "3": "Dia bekerja sangat efisien, terarah dan hati-hati dan menunjukkan keterampilan organisasi yang baik."
+      },
+      "befriedigend": {
+        "1": "Dia dapat diandalkan, dan gaya kerjanya selalu ditandai dengan perencanaan dan pendekatan sistematis.",
+        "2": "Dia melaksanakan tugasnya dengan hati-hati dan terencana."
+      },
+      "ausreichend": {
+        "1": "Dia dapat diandalkan dan menyelesaikan tugas-tugas penting tanpa masalah.",
+        "2": "Dia melaksanakan tugasnya dengan kehati-hatian dan perencanaan yang memadai."
+      }
+    },
+    "qualityVariants": {
+      "sehr-gut": {
+        "1": "Dia selalu mengesankan dengan hasil yang luar biasa secara kualitatif dan kuantitatif.",
+        "2": "Hasil kerjanya selalu berkualitas sangat baik, bahkan dengan persyaratan yang berubah dan dalam kondisi yang sangat sulit.",
+        "3": "Dia adalah karyawan yang sangat mampu yang hasil kerjanya yang luar biasa selalu meyakinkan baik secara kualitatif maupun kuantitatif."
+      },
+      "gut": {
+        "1": "Dia secara konsisten memberikan hasil yang baik secara kualitatif dan kuantitatif.",
+        "2": "Hasil kerjanya selalu berkualitas baik, bahkan dengan persyaratan yang berubah dan dalam kondisi yang sangat sulit.",
+        "3": "Dia adalah karyawan yang mampu yang secara konsisten mencapai hasil kerja di atas rata-rata."
+      },
+      "befriedigend": {
+        "1": "Kualitas hasil kerjanya sepenuhnya memenuhi persyaratan yang ditetapkan untuknya.",
+        "2": "Hasil kerjanya berkualitas baik."
+      },
+      "ausreichend": {
+        "1": "Dia berusaha untuk hasil yang baik.",
+        "2": "Hasil kerjanya memenuhi persyaratan minimum kami."
+      }
+    },
+    "resilienceVariants": {
+      "sehr-gut": {
+        "1": "Dia selalu mampu menangani tekanan waktu dan beban kerja tertinggi.",
+        "2": "Bahkan dalam situasi dengan beban kerja yang sangat tinggi, {title} {lastName} terbukti menjadi karyawan yang sangat tangguh dan selalu bertindak dengan pertimbangan, tenang dan berorientasi pada tujuan.",
+        "3": "{title} {lastName} selalu ditandai dengan ketahanan tinggi dan orientasi tujuan, bahkan dalam situasi stres ekstrem dan di bawah tekanan waktu."
+      },
+      "gut": {
+        "1": "Dia mampu menangani tekanan waktu dan beban kerja yang meningkat dengan baik.",
+        "2": "Bahkan dengan beban kerja yang sangat tinggi, {title} {lastName} terbukti menjadi karyawan yang tangguh dan bertindak dengan pertimbangan, tenang dan berorientasi pada tujuan.",
+        "3": "{title} {lastName} ditandai dengan ketahanan tinggi dan orientasi tujuan bahkan dalam situasi stres ekstrem."
+      },
+      "befriedigend": {
+        "1": "Dia mampu menangani tekanan waktu dan beban kerja yang tinggi.",
+        "2": "Bahkan dengan beban kerja yang tinggi, {title} {lastName} terbukti menjadi karyawan yang tangguh."
+      },
+      "ausreichend": {
+        "1": "Dia mampu menangani tekanan waktu dan beban kerja normal.",
+        "2": "Dengan beban kerja normal, {title} {lastName} terbukti menjadi karyawan yang dapat diandalkan."
+      }
+    },
+    "leadershipVariants": {
+      "sehr-gut": {
+        "1": "{title} {lastName} dianggap sebagai pemimpin yang luar biasa. Dia secara aktif mempromosikan kerja sama, mendukung dan menginformasikan karyawannya secara komprehensif setiap saat dan selalu mendelegasikan tugas dan tanggung jawab pada tingkat yang sesuai. Dia secara konsisten mencapai hasil kerja yang sangat baik.",
+        "2": "{title} {lastName} adalah supervisor yang lugas, dihormati dan peduli. Dia selalu unggul dalam memotivasi timnya dan menggerakkan departemennya ke efektivitas tertinggi.",
+        "3": "{title} {lastName} selalu menjadi panutan yang dihargai untuk karyawannya. Dia memimpin karyawannya secara berorientasi tujuan dan objektif dan mencapai peningkatan kinerja yang luar biasa pada tingkat yang konsisten tinggi serta suasana tim yang sangat baik."
+      },
+      "gut": {
+        "1": "{title} {lastName} dianggap sebagai pemimpin yang baik. Dia secara aktif mempromosikan kerja sama, mendukung dan menginformasikan karyawannya secara komprehensif dan mendelegasikan tugas dan tanggung jawab pada tingkat yang sesuai. Dia secara konsisten mencapai hasil kerja yang baik.",
+        "2": "{title} {lastName} adalah supervisor yang lugas, dihormati dan peduli. Dia selalu baik dalam memotivasi timnya dan menggerakkan departemennya ke efektivitas tinggi.",
+        "3": "{title} {lastName} selalu menjadi panutan untuk karyawannya. Dia memimpin karyawannya secara berorientasi tujuan dan objektif dan mencapai peningkatan kinerja yang baik pada tingkat yang konsisten tinggi serta suasana tim yang baik."
+      },
+      "befriedigend": {
+        "1": "{title} {lastName} dianggap sebagai pemimpin yang tahu cara mempromosikan karyawannya, menginformasikan mereka dan mendelegasikan tugas dan tanggung jawab.",
+        "2": "{title} {lastName} adalah supervisor yang lugas dan peduli. Dia tahu cara memotivasi timnya dan meningkatkan proses kerja di departemennya."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} memenuhi harapan kami dalam fungsinya sebagai pemimpin dan mencapai kesuksesan dalam proyek yang diimplementasikan.",
+        "2": "{title} {lastName} adalah supervisor yang peduli. Dia tahu cara mengoordinasikan bisnis sehari-hari departemennya."
+      },
+      "mangelhaft": {
+        "1": "{title} {lastName} sebagai pemimpin selalu berusaha memberikan instruksi yang jelas dan mengoordinasikan semua pekerjaan.",
+        "2": "{title} {lastName} adalah supervisor yang peduli. Dia selalu berusaha untuk mengoordinasikan bisnis sehari-hari departemennya."
+      }
+    },
+    "overallVariants": {
+      "sehr-gut": {
+        "1": "{title} {lastName} selalu menyelesaikan tugas yang diberikan kepadanya dengan kepuasan penuh kami.",
+        "2": "{title} {lastName} selalu menyelesaikan tugasnya dengan kepuasan penuh kami dan memenuhi harapan kami secara optimal dalam segala hal.",
+        "3": "{title} {lastName} selalu memenuhi harapan kami dalam segala hal. Kami sangat puas dengan kinerjanya setiap saat."
+      },
+      "gut": {
+        "1": "{title} {lastName} selalu menyelesaikan tugas yang diberikan kepadanya dengan kepuasan kami.",
+        "2": "{title} {lastName} selalu menyelesaikan tugasnya dengan kepuasan kami dan memenuhi harapan kami dengan baik dalam segala hal.",
+        "3": "{title} {lastName} selalu memenuhi harapan kami dengan baik. Kami puas dengan kinerjanya setiap saat."
+      },
+      "befriedigend": {
+        "1": "{title} {lastName} menyelesaikan tugas yang diberikan kepadanya dengan kepuasan kami.",
+        "2": "{title} {lastName} menyelesaikan tugasnya dengan kepuasan kami dan memenuhi harapan kami dalam segala hal.",
+        "3": "{title} {lastName} sepenuhnya memenuhi harapan kami."
+      },
+      "ausreichend": {
+        "1": "{title} {lastName} menyelesaikan tugas yang diberikan kepadanya dengan kepuasan kami.",
+        "2": "{title} {lastName} menguasai bidang kerjanya sesuai dengan persyaratan.",
+        "3": "{title} {lastName} memenuhi harapan kami."
+      },
+      "mangelhaft": {
+        "1": "{title} {lastName} umumnya memenuhi tugasnya dengan kepuasan kami.",
+        "2": "{title} {lastName} sebagian besar memenuhi persyaratan kami."
+      },
+      "ungenugend": {
+        "1": "{title} {lastName} berusaha untuk memenuhi persyaratan kami.",
+        "2": "{title} {lastName} selalu berusaha untuk memenuhi persyaratan kami."
+      }
+    },
+    "socialVariants": {
+      "sehr-gut": {
+        "1": "Perilakunya terhadap atasan, kolega, dan pihak eksternal selalu luar biasa.",
+        "2": "{title} {lastName} selalu berperilaku teladan terhadap atasan, karyawan, dan pelanggan. Dia berkontribusi pada kerja tim yang sangat baik dan efisien.",
+        "3": "Dia sama-sama dihargai oleh atasan, kolega, dan pelanggan. Dia selalu berperilaku loyal terhadap perusahaan dan meyakinkan melalui integritas pribadinya. Perilakunya selalu teladan. Dalam kontak dengan pelanggan, {title} {lastName} ditandai dengan sikap yang sangat profesional."
+      },
+      "gut": {
+        "1": "Perilakunya terhadap atasan, kolega, dan pihak eksternal selalu sempurna.",
+        "2": "{title} {lastName} selalu berperilaku sempurna terhadap atasan, karyawan, dan pelanggan. Dia berkontribusi pada kerja tim yang baik dan efisien."
+      },
+      "befriedigend": {
+        "1": "Perilakunya terhadap atasan, kolega, dan pihak eksternal sempurna.",
+        "2": "Perilakunya terhadap atasan, kolega, dan pihak eksternal selalu benar."
+      },
+      "ausreichend": {
+        "1": "Perilakunya terhadap kolega dan atasan memuaskan.",
+        "2": "Perilakunya terhadap kolega dan atasan bebas ketegangan."
+      }
+    },
+    "leavingReasons": {
+      "employee": "{title} {lastName} meninggalkan perusahaan kami atas permintaan sendiri.",
+      "mutual": "{title} {lastName} meninggalkan perusahaan kami dengan kesepakatan bersama.",
+      "employer": "{title} {lastName} meninggalkan perusahaan kami pada {endDate}.",
+      "operational": "Hubungan kerja berakhir karena alasan operasional pada {endDate}.",
+      "temporary": "{title} {lastName} meninggalkan perusahaan kami setelah jangka waktu yang disepakati berakhir."
+    },
+    "farewellVariants": {
+      "sehr-gut": {
+        "1": "Kami berterima kasih kepada {title} {lastName} atas kerja sama yang luar biasa dan sangat menyesali kehilangan dia sebagai karyawan. Kami berharap semua yang terbaik untuk kehidupan profesional dan pribadinya dan kesuksesan yang berkelanjutan.",
+        "2": "Kami berterima kasih kepada {title} {lastName} atas kinerja yang luar biasa dan sangat menyesali kepergiannya. Kami yakin bahwa dia akan mencapai kesuksesan yang luar biasa di masa depan."
+      },
+      "gut": {
+        "1": "Kami berterima kasih kepada {title} {lastName} atas kerja sama yang berharga dan menyesali kehilangan dia sebagai karyawan. Kami berharap semua yang terbaik untuk kehidupan profesional dan pribadinya dan kesuksesan yang berkelanjutan.",
+        "2": "Kami berterima kasih kepada {title} {lastName} atas kinerja yang baik dan sangat menyesali kepergiannya. Kami yakin bahwa dia akan mencapai kesuksesan yang luar biasa di masa depan."
+      },
+      "befriedigend": {
+        "1": "Kami berterima kasih kepada {title} {lastName} atas kinerja yang diberikan dan berharap semua yang terbaik untuk masa depannya.",
+        "2": "Kami berterima kasih kepada {title} {lastName} atas karyanya dan menyesali kepergiannya. Kami yakin bahwa dia akan mencapai kesuksesan yang baik di masa depan."
+      },
+      "ausreichend": {
+        "1": "Kami berharap {title} {lastName} semua yang terbaik untuk masa depan.",
+        "2": "Kami berterima kasih kepada {title} {lastName} atas kerja samanya."
+      }
+    },
+    "additionalPhrases": {
+      "application": "Kami akan sangat senang jika dia melamar kepada kami untuk memulai karier setelah menyelesaikan studinya.",
+      "offer": "Karena kami selalu sangat puas dengan kinerjanya, kami telah membuat penawaran kepada {title} {lastName} untuk memulai karier setelah menyelesaikan studinya, dan kami akan sangat senang jika dia menerimanya."
+    }
   },
   "templates": {
     "opening": "Ini adalah untuk membuktikan bahwa {name} bekerja di {company} dari {startDate} hingga {endDate}.",

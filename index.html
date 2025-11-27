@@ -20,9 +20,10 @@
                     <h1 class="mb-0" id="app-title">Employment Reference Letter Generator</h1>
                 </div>
                 <div class="col-auto">
-                    <select id="language-selector" class="form-select">
+                    <select id="language-selector" class="form-select" aria-label="Language Selection">
                         <option value="en">English</option>
                         <option value="id">Indonesian</option>
+                        <option value="de">Deutsch</option>
                     </select>
                 </div>
             </div>
@@ -75,9 +76,566 @@
                     <p class="text-muted" id="form-subtitle">Complete the form below to create your employment reference letter</p>
                     
                     <!-- Form will be added here -->
-                    <div id="reference-form">
-                        <p class="text-center text-muted py-5">Form coming soon...</p>
-                    </div>
+                    <form id="reference-form">
+                        <!-- Employee Information Section -->
+                        <div class="form-section mb-5">
+                            <h4 class="section-title mb-4" id="employee-info-title">Employee Information</h4>
+                            
+                            <div class="row g-3">
+                                <!-- Title -->
+                                <div class="col-md-2">
+                                    <label for="title" class="form-label" id="label-title">Title</label>
+                                    <select class="form-select" id="title" name="title" aria-label="Title Selection">
+                                        <option value="Herr" id="title-mr">Mr</option>
+                                        <option value="Frau" id="title-ms">Ms</option>
+                                        <option value="Dr" id="title-dr">Dr</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- First Name -->
+                                <div class="col-md-3">
+                                    <label for="firstName" class="form-label" id="label-firstName">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                </div>
+                                
+                                <!-- Last Name -->
+                                <div class="col-md-3">
+                                    <label for="lastName" class="form-label" id="label-lastName">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                </div>
+                                
+                                <!-- Date of Birth -->
+                                <div class="col-md-2">
+                                    <label for="dateOfBirth" class="form-label" id="label-dateOfBirth">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth">
+                                </div>
+                                
+                                <!-- Place of Birth -->
+                                <div class="col-md-2">
+                                    <label for="placeOfBirth" class="form-label" id="label-placeOfBirth">Place of Birth</label>
+                                    <input type="text" class="form-control" id="placeOfBirth" name="placeOfBirth">
+                                </div>
+                            </div>
+                            
+                            <div class="row g-3 mt-3">
+                                <!-- Position -->
+                                <div class="col-md-4">
+                                    <label for="position" class="form-label" id="label-position">Position</label>
+                                    <input type="text" class="form-control" id="position" name="position" required>
+                                </div>
+                                
+                                <!-- Department -->
+                                <div class="col-md-4">
+                                    <label for="department" class="form-label" id="label-department">Department</label>
+                                    <input type="text" class="form-control" id="department" name="department">
+                                </div>
+                                
+                                <!-- Start Date -->
+                                <div class="col-md-2">
+                                    <label for="startDate" class="form-label" id="label-startDate">Start Date</label>
+                                    <input type="date" class="form-control" id="startDate" name="startDate" required>
+                                </div>
+                                
+                                <!-- End Date -->
+                                <div class="col-md-2">
+                                    <label for="endDate" class="form-label" id="label-endDate">End Date</label>
+                                    <input type="date" class="form-control" id="endDate" name="endDate" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Introduction Section -->
+                        <div class="form-section mb-5">
+                            <h4 class="section-title mb-4" id="introduction-title">Introduction</h4>
+                            
+                            <div class="variant-selection mb-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="introVariant" id="intro-variant-1" value="1" checked>
+                                    <label class="form-check-label" for="intro-variant-1" id="label-variant">Variant 1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="introVariant" id="intro-variant-2" value="2">
+                                    <label class="form-check-label" for="intro-variant-2">Variant 2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="introVariant" id="intro-variant-3" value="3">
+                                    <label class="form-check-label" for="intro-variant-3">Variant 3</label>
+                                </div>
+                            </div>
+                            
+                            <textarea class="form-control" id="introduction-text" rows="3" readonly></textarea>
+                        </div>
+
+                        <!-- Company Description Section -->
+                        <div class="form-section mb-5">
+                            <h4 class="section-title mb-4" id="company-description-title">Company Description</h4>
+                            
+                            <div class="variant-selection mb-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="companyVariant" id="company-example-1" value="1" checked>
+                                    <label class="form-check-label" for="company-example-1" id="label-example">Example 1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="companyVariant" id="company-example-2" value="2">
+                                    <label class="form-check-label" for="company-example-2">Example 2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="companyVariant" id="company-example-3" value="3">
+                                    <label class="form-check-label" for="company-example-3">Example 3</label>
+                                </div>
+                            </div>
+                            
+                            <textarea class="form-control" id="company-description-text" rows="6"></textarea>
+                        </div>
+
+                        <!-- Job Duties Section -->
+                        <div class="form-section mb-5">
+                            <h4 class="section-title mb-4" id="duties-title">Job Duties</h4>
+                            
+                            <div class="variant-selection mb-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="dutiesVariant" id="duties-variant-1" value="1" checked>
+                                    <label class="form-check-label" for="duties-variant-1">Variant 1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="dutiesVariant" id="duties-variant-2" value="2">
+                                    <label class="form-check-label" for="duties-variant-2">Variant 2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="dutiesVariant" id="duties-variant-3" value="3">
+                                    <label class="form-check-label" for="duties-variant-3">Variant 3</label>
+                                </div>
+                            </div>
+                            
+                            <textarea class="form-control" id="duties-intro-text" rows="2" readonly></textarea>
+                            
+                            <div class="mt-3">
+                                <label for="duties-list" class="form-label" id="label-duties-description">(Here you can describe the employee's duties.)</label>
+                                <textarea class="form-control" id="duties-list" rows="8" placeholder="• Duty 1&#10;• Duty 2&#10;• Duty 3"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Performance Ratings Section -->
+                        <div class="form-section mb-5">
+                            <h3 class="text-center mb-4" id="performance-ratings-title">Performance Ratings</h3>
+                            
+                            <!-- Professional Knowledge (Fachwissen) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="knowledge-title">Professional Knowledge</h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label" id="label-rating">Rating:</label>
+                                        <div class="rating-options">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="knowledgeRating" id="knowledge-sehr-gut" value="sehr-gut" checked>
+                                                <label class="form-check-label" for="knowledge-sehr-gut" id="label-sehr-gut">Very Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="knowledgeRating" id="knowledge-gut" value="gut">
+                                                <label class="form-check-label" for="knowledge-gut" id="label-gut">Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="knowledgeRating" id="knowledge-befriedigend" value="befriedigend">
+                                                <label class="form-check-label" for="knowledge-befriedigend" id="label-befriedigend">Satisfactory</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="knowledgeRating" id="knowledge-ausreichend" value="ausreichend">
+                                                <label class="form-check-label" for="knowledge-ausreichend" id="label-ausreichend">Adequate</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="variant-options mt-3" id="knowledge-variant-container">
+                                            <!-- Variants will be populated based on rating -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-9">
+                                        <label class="form-label" id="label-generated-text">Generated Text:</label>
+                                        <textarea class="form-control" id="knowledge-text" rows="4" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Willingness to Perform (Leistungsbereitschaft) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="willingness-title">Willingness to Perform</h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Rating:</label>
+                                        <div class="rating-options">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="willingnessRating" id="willingness-sehr-gut" value="sehr-gut" checked>
+                                                <label class="form-check-label" for="willingness-sehr-gut">Very Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="willingnessRating" id="willingness-gut" value="gut">
+                                                <label class="form-check-label" for="willingness-gut">Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="willingnessRating" id="willingness-befriedigend" value="befriedigend">
+                                                <label class="form-check-label" for="willingness-befriedigend">Satisfactory</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="willingnessRating" id="willingness-ausreichend" value="ausreichend">
+                                                <label class="form-check-label" for="willingness-ausreichend">Adequate</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="variant-options mt-3" id="willingness-variant-container">
+                                            <!-- Variants will be populated based on rating -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-9">
+                                        <label class="form-label">Generated Text:</label>
+                                        <textarea class="form-control" id="willingness-text" rows="4" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Work Approach (Arbeitsweise) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="workstyle-title">Work Approach</h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Rating:</label>
+                                        <div class="rating-options">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="workstyleRating" id="workstyle-sehr-gut" value="sehr-gut" checked>
+                                                <label class="form-check-label" for="workstyle-sehr-gut">Very Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="workstyleRating" id="workstyle-gut" value="gut">
+                                                <label class="form-check-label" for="workstyle-gut">Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="workstyleRating" id="workstyle-befriedigend" value="befriedigend">
+                                                <label class="form-check-label" for="workstyle-befriedigend">Satisfactory</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="workstyleRating" id="workstyle-ausreichend" value="ausreichend">
+                                                <label class="form-check-label" for="workstyle-ausreichend">Adequate</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="variant-options mt-3" id="workstyle-variant-container">
+                                            <!-- Variants will be populated based on rating -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-9">
+                                        <label class="form-label">Generated Text:</label>
+                                        <textarea class="form-control" id="workstyle-text" rows="4" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Work Quality (Arbeitsqualität) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="quality-title">Work Quality</h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Rating:</label>
+                                        <div class="rating-options">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="qualityRating" id="quality-sehr-gut" value="sehr-gut" checked>
+                                                <label class="form-check-label" for="quality-sehr-gut">Very Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="qualityRating" id="quality-gut" value="gut">
+                                                <label class="form-check-label" for="quality-gut">Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="qualityRating" id="quality-befriedigend" value="befriedigend">
+                                                <label class="form-check-label" for="quality-befriedigend">Satisfactory</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="qualityRating" id="quality-ausreichend" value="ausreichend">
+                                                <label class="form-check-label" for="quality-ausreichend">Adequate</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="variant-options mt-3" id="quality-variant-container">
+                                            <!-- Variants will be populated based on rating -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-9">
+                                        <label class="form-label">Generated Text:</label>
+                                        <textarea class="form-control" id="quality-text" rows="4" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Resilience (Belastungsfähigkeit) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="resilience-title">Resilience</h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Rating:</label>
+                                        <div class="rating-options">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="resilienceRating" id="resilience-sehr-gut" value="sehr-gut" checked>
+                                                <label class="form-check-label" for="resilience-sehr-gut">Very Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="resilienceRating" id="resilience-gut" value="gut">
+                                                <label class="form-check-label" for="resilience-gut">Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="resilienceRating" id="resilience-befriedigend" value="befriedigend">
+                                                <label class="form-check-label" for="resilience-befriedigend">Satisfactory</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="resilienceRating" id="resilience-ausreichend" value="ausreichend">
+                                                <label class="form-check-label" for="resilience-ausreichend">Adequate</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="variant-options mt-3" id="resilience-variant-container">
+                                            <!-- Variants will be populated based on rating -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-9">
+                                        <label class="form-label">Generated Text:</label>
+                                        <textarea class="form-control" id="resilience-text" rows="4" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Leadership Style (Führungsstil) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="leadership-title">Leadership Style (Supervisory Positions Only)</h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Rating:</label>
+                                        <div class="rating-options">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="leadershipRating" id="leadership-sehr-gut" value="sehr-gut" checked>
+                                                <label class="form-check-label" for="leadership-sehr-gut">Very Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="leadershipRating" id="leadership-gut" value="gut">
+                                                <label class="form-check-label" for="leadership-gut">Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="leadershipRating" id="leadership-befriedigend" value="befriedigend">
+                                                <label class="form-check-label" for="leadership-befriedigend">Satisfactory</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="leadershipRating" id="leadership-ausreichend" value="ausreichend">
+                                                <label class="form-check-label" for="leadership-ausreichend">Adequate</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="leadershipRating" id="leadership-mangelhaft" value="mangelhaft">
+                                                <label class="form-check-label" for="leadership-mangelhaft" id="label-mangelhaft">Poor</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="variant-options mt-3" id="leadership-variant-container">
+                                            <!-- Variants will be populated based on rating -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-9">
+                                        <label class="form-label">Generated Text:</label>
+                                        <textarea class="form-control" id="leadership-text" rows="5" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Overall Assessment (Gesamturteil) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="overall-title">Overall Assessment</h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Rating:</label>
+                                        <div class="rating-options">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="overallRating" id="overall-sehr-gut" value="sehr-gut" checked>
+                                                <label class="form-check-label" for="overall-sehr-gut">Very Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="overallRating" id="overall-gut" value="gut">
+                                                <label class="form-check-label" for="overall-gut">Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="overallRating" id="overall-befriedigend" value="befriedigend">
+                                                <label class="form-check-label" for="overall-befriedigend">Satisfactory</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="overallRating" id="overall-ausreichend" value="ausreichend">
+                                                <label class="form-check-label" for="overall-ausreichend">Adequate</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="overallRating" id="overall-mangelhaft" value="mangelhaft">
+                                                <label class="form-check-label" for="overall-mangelhaft">Poor</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="overallRating" id="overall-ungenugend" value="ungenugend">
+                                                <label class="form-check-label" for="overall-ungenugend" id="label-ungenugend">Insufficient</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="variant-options mt-3" id="overall-variant-container">
+                                            <!-- Variants will be populated based on rating -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-9">
+                                        <label class="form-label">Generated Text:</label>
+                                        <textarea class="form-control" id="overall-text" rows="4" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Behavior (Soziales Verhalten) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="social-title">Social Behavior</h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Rating:</label>
+                                        <div class="rating-options">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="socialRating" id="social-sehr-gut" value="sehr-gut" checked>
+                                                <label class="form-check-label" for="social-sehr-gut">Very Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="socialRating" id="social-gut" value="gut">
+                                                <label class="form-check-label" for="social-gut">Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="socialRating" id="social-befriedigend" value="befriedigend">
+                                                <label class="form-check-label" for="social-befriedigend">Satisfactory</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="socialRating" id="social-ausreichend" value="ausreichend">
+                                                <label class="form-check-label" for="social-ausreichend">Adequate</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="variant-options mt-3" id="social-variant-container">
+                                            <!-- Variants will be populated based on rating -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-9">
+                                        <label class="form-label">Generated Text:</label>
+                                        <textarea class="form-control" id="social-text" rows="5" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reason for Leaving (Austrittsgrund) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="leaving-title">Reason for Leaving</h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Type:</label>
+                                        <div class="rating-options">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="leavingReason" id="leaving-employee" value="employee" checked onchange="updateLeavingText()">
+                                                <label class="form-check-label" for="leaving-employee">Resignation by Employee</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="leavingReason" id="leaving-mutual" value="mutual" onchange="updateLeavingText()">
+                                                <label class="form-check-label" for="leaving-mutual">Mutual Agreement</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="leavingReason" id="leaving-employer" value="employer" onchange="updateLeavingText()">
+                                                <label class="form-check-label" for="leaving-employer">Termination by Employer</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="leavingReason" id="leaving-operational" value="operational" onchange="updateLeavingText()">
+                                                <label class="form-check-label" for="leaving-operational">Operational Reasons</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="leavingReason" id="leaving-temporary" value="temporary" onchange="updateLeavingText()">
+                                                <label class="form-check-label" for="leaving-temporary">Fixed Term (Internship)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-9">
+                                        <label class="form-label">Generated Text:</label>
+                                        <textarea class="form-control" id="leaving-text" rows="3" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Farewell Formula (Abschiedsformel) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="farewell-title">Farewell Formula</h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Rating:</label>
+                                        <div class="rating-options">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="farewellRating" id="farewell-sehr-gut" value="sehr-gut" checked>
+                                                <label class="form-check-label" for="farewell-sehr-gut">Very Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="farewellRating" id="farewell-gut" value="gut">
+                                                <label class="form-check-label" for="farewell-gut">Good</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="farewellRating" id="farewell-befriedigend" value="befriedigend">
+                                                <label class="form-check-label" for="farewell-befriedigend">Satisfactory</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="farewellRating" id="farewell-ausreichend" value="ausreichend">
+                                                <label class="form-check-label" for="farewell-ausreichend">Adequate</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="variant-options mt-3" id="farewell-variant-container">
+                                            <!-- Variants will be populated based on rating -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-9">
+                                        <label class="form-label">Generated Text:</label>
+                                        <textarea class="form-control" id="farewell-text" rows="5" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Phrases (Sonstige Zusätze) -->
+                            <div class="performance-category mb-4">
+                                <h4 class="section-title mb-3" id="additional-title">Additional Phrases and Formulations</h4>
+                                
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="additional-application" value="application" onchange="updateAdditionalText()">
+                                            <label class="form-check-label" for="additional-application">
+                                                Intern: Application after graduation desired
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="additional-offer" value="offer" onchange="updateAdditionalText()">
+                                            <label class="form-check-label" for="additional-offer">
+                                                Intern: Job offer extended
+                                            </label>
+                                        </div>
+                                        <label class="form-label">Generated Text:</label>
+                                        <textarea class="form-control" id="additional-text" rows="4" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
