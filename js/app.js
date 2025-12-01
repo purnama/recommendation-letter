@@ -688,3 +688,62 @@ function generateLetter() {
     
     preview.innerHTML = letterHTML;
 }
+
+// Download letter as PDF using jsPDF
+function downloadLetterAsPDF() {
+    const { jsPDF } = window.jspdf;
+    const preview = document.getElementById('letter-preview');
+    
+    // Check if letter has been generated
+    if (!preview || preview.innerHTML.includes('preview-placeholder')) {
+        alert(translations[currentLanguage]?.preview?.placeholder || 'Please generate the letter first');
+        return;
+    }
+    
+    // Get the letter content as text
+    const letterText = preview.innerText || preview.textContent;
+    
+    // Create new PDF document (A4 size)
+    const doc = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4'
+    });
+    
+    // Set font - smaller size for better fit
+    doc.setFont('helvetica');
+    doc.setFontSize(9);
+    
+    // Page dimensions with tighter margins
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const margin = 15;
+    const maxLineWidth = pageWidth - (margin * 2);
+    const lineHeight = 5;
+    
+    // Split text into lines that fit the page width
+    const lines = doc.splitTextToSize(letterText, maxLineWidth);
+    
+    let y = margin;
+    
+    // Add text line by line, handling page breaks
+    for (let i = 0; i < lines.length; i++) {
+        // Check if we need a new page
+        if (y + lineHeight > pageHeight - margin) {
+            doc.addPage();
+            y = margin;
+        }
+        
+        doc.text(lines[i], margin, y);
+        y += lineHeight;
+    }
+    
+    // Generate filename with employee name and date
+    const firstName = document.getElementById('firstName')?.value || 'Employee';
+    const lastName = document.getElementById('lastName')?.value || 'Reference';
+    const today = new Date().toISOString().split('T')[0];
+    const filename = `Reference_Letter_${firstName}_${lastName}_${today}.pdf`;
+    
+    // Download the PDF
+    doc.save(filename);
+}

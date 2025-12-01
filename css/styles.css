@@ -192,16 +192,61 @@ footer {
         size: A4;
     }
     
-    /* Hide everything except print-only content */
-    body * {
+    /* Hide all non-essential elements */
+    header,
+    footer,
+    .intro-section,
+    .no-print,
+    .no-print-container,
+    #form-title,
+    #form-subtitle,
+    #preview-title,
+    #preview-placeholder,
+    .btn,
+    .d-flex,
+    .form-section:not(.print-section),
+    .card-title,
+    .section-title,
+    .variant-selection,
+    .rating-options,
+    .variant-options,
+    .performance-category,
+    .form-control,
+    .form-label,
+    .form-check,
+    textarea {
         display: none !important;
     }
     
-    /* Show only the print section and letter preview */
-    body,
-    main,
-    .print-section,
-    .print-only,
+    /* Reset body and main container */
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+    
+    main {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Show only the letter preview */
+    .print-section {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .print-only {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: white !important;
+    }
+    
+    /* Ensure all letter content is visible */
     .print-only * {
         display: block !important;
     }
@@ -211,7 +256,8 @@ footer {
     .print-only em,
     .print-only span,
     .print-only b,
-    .print-only i {
+    .print-only i,
+    .print-only a {
         display: inline !important;
     }
     
@@ -221,61 +267,51 @@ footer {
         display: block !important;
         list-style-position: inside;
         padding-left: 0;
+        margin-left: 1em;
     }
     
     .print-only li {
         display: list-item !important;
-        margin-left: 1.5em;
-    }
-    
-    /* Reset all containers for clean print */
-    body {
-        margin: 0 !important;
-        padding: 0 !important;
-        background: white !important;
-    }
-    
-    main,
-    .print-section,
-    .print-only {
-        margin: 0 !important;
-        padding: 0 !important;
-        box-shadow: none !important;
-        border: none !important;
-        background: white !important;
-        max-width: 100% !important;
-        width: 100% !important;
+        margin-left: 1em;
+        margin-bottom: 0.5em;
     }
     
     /* Style letter content */
     .print-only p {
+        display: block !important;
         margin-bottom: 1rem;
         text-align: justify;
+        page-break-inside: avoid;
+    }
+    
+    .print-only h2,
+    .print-only h3,
+    .print-only h4 {
+        display: block !important;
+        page-break-after: avoid;
     }
     
     .print-only .letter-header {
+        display: block !important;
         margin-bottom: 2rem;
     }
     
     .print-only .letter-body {
+        display: block !important;
         margin-bottom: 2rem;
     }
     
     .print-only .letter-footer {
+        display: block !important;
         margin-top: 2rem;
         border-top: none;
         padding-top: 1rem;
     }
     
-    /* Prevent awkward page breaks */
-    .print-only h2,
-    .print-only h3,
-    .print-only p {
-        page-break-inside: avoid;
-    }
-    
-    /* Hide placeholder text when printing */
-    #preview-placeholder {
-        display: none !important;
+    .print-only .letter-footer .row,
+    .print-only .letter-footer .col-6 {
+        display: block !important;
+        width: 48% !important;
+        float: left !important;
     }
 }
