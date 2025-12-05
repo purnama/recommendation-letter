@@ -4,6 +4,10 @@
 let currentLanguage = 'en';
 let translations = {};
 
+// Expose to window for use by modules
+window.currentLanguage = currentLanguage;
+window.translations = translations;
+
 // Initialize application
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Employment Reference Letter Generator initialized');
@@ -31,6 +35,7 @@ function setupEventListeners() {
     if (languageSelector) {
         languageSelector.addEventListener('change', function(e) {
             currentLanguage = e.target.value;
+            window.currentLanguage = currentLanguage;
             loadTranslations();
         });
     }
@@ -113,6 +118,7 @@ async function loadTranslations() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         translations = await response.json();
+        window.translations = translations;
         console.log('Translations loaded successfully:', translations);
         updateUILanguage();
     } catch (error) {

@@ -1,6 +1,6 @@
 // DOCX Handler Module
 import { Document, Packer, Paragraph, TextRun, AlignmentType } from 'docx';
-import { saveAs } from 'file-saver';
+import FileSaver from 'file-saver';
 
 // Make the function globally available
 window.downloadLetterAsDOCX = async function() {
@@ -274,5 +274,5 @@ window.downloadLetterAsDOCX = async function() {
     const blob = await Packer.toBlob(doc);
     const filename = `Reference_Letter_${firstName}_${lastName}_${today}.docx`;
     
-    saveAs(blob, filename);
+    FileSaver.saveAs(blob, filename);
 };
