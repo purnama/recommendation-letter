@@ -130,6 +130,18 @@ header {
     box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
 
+/* Auto-resizing textareas */
+textarea.form-control {
+    resize: vertical;
+    overflow-y: auto;
+    min-height: 60px;
+}
+
+/* Performance category textareas should match their rating container height */
+.performance-category textarea.form-control {
+    height: auto;
+}
+
 /* Footer Styles */
 footer {
     margin-top: auto;

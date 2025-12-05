@@ -8,6 +8,24 @@ let translations = {};
 window.currentLanguage = currentLanguage;
 window.translations = translations;
 
+// Auto-resize textarea to match the height of its corresponding rating/variant container
+function autoResizeTextarea(textarea) {
+    if (!textarea) return;
+    
+    // Find the corresponding rating container (the left column sibling)
+    const textareaCol = textarea.closest('.col-md-9');
+    if (!textareaCol) return;
+    
+    const row = textareaCol.closest('.row');
+    if (!row) return;
+    
+    const ratingCol = row.querySelector('.col-md-3');
+    if (!ratingCol) return;
+    
+    // Match the height of the rating/variant container
+    textarea.style.height = ratingCol.offsetHeight + 'px';
+}
+
 // Initialize application
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Employment Reference Letter Generator initialized');
@@ -338,7 +356,10 @@ function updateIntroductionText() {
     }
     
     const introTextArea = document.getElementById('introduction-text');
-    if (introTextArea) introTextArea.value = text;
+    if (introTextArea) {
+        introTextArea.value = text;
+        autoResizeTextarea(introTextArea);
+    }
 }
 
 // Update company description text based on selected example
@@ -364,6 +385,7 @@ function updateCompanyDescriptionText() {
     const companyTextArea = document.getElementById('company-description-text');
     if (companyTextArea) {
         companyTextArea.value = text;
+        autoResizeTextarea(companyTextArea);
     }
 }
 
@@ -389,7 +411,10 @@ function updateDutiesIntroText() {
     }
     
     const dutiesIntroTextArea = document.getElementById('duties-intro-text');
-    if (dutiesIntroTextArea) dutiesIntroTextArea.value = text;
+    if (dutiesIntroTextArea) {
+        dutiesIntroTextArea.value = text;
+        autoResizeTextarea(dutiesIntroTextArea);
+    }
 }
 
 // Update performance variants based on selected rating
@@ -454,7 +479,10 @@ function updatePerformanceText(category) {
     }
     
     const textArea = document.getElementById(`${category}-text`);
-    if (textArea) textArea.value = text;
+    if (textArea) {
+        textArea.value = text;
+        autoResizeTextarea(textArea);
+    }
 }
 
 // Update all performance texts
@@ -490,7 +518,10 @@ function updateLeavingText() {
     }
     
     const textArea = document.getElementById('leaving-text');
-    if (textArea) textArea.value = text;
+    if (textArea) {
+        textArea.value = text;
+        autoResizeTextarea(textArea);
+    }
 }
 
 // Update additional phrases text
@@ -521,7 +552,10 @@ function updateAdditionalText() {
     }
     
     const textArea = document.getElementById('additional-text');
-    if (textArea) textArea.value = text;
+    if (textArea) {
+        textArea.value = text;
+        autoResizeTextarea(textArea);
+    }
 }
 
 // Update introduction content
