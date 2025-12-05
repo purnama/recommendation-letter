@@ -62,6 +62,16 @@ function setupEventListeners() {
         }
     });
     
+    // Company info fields - update company description when changed
+    const companyFields = ['companyName', 'companyCity'];
+    companyFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field) {
+            field.addEventListener('input', updateCompanyDescriptionText);
+            field.addEventListener('change', updateCompanyDescriptionText);
+        }
+    });
+    
     // Performance rating listeners
     setupPerformanceListeners('knowledge');
     setupPerformanceListeners('willingness');
@@ -159,6 +169,12 @@ function updateFormLabels() {
         console.log('Updated introduction title:', translations.form.introduction);
     }
     
+    const companyInfoTitle = document.getElementById('company-info-title');
+    if (companyInfoTitle) {
+        companyInfoTitle.textContent = translations.form.companyInfo || 'Company Information';
+        console.log('Updated company info title:', translations.form.companyInfo);
+    }
+    
     const companyDescTitle = document.getElementById('company-description-title');
     if (companyDescTitle) {
         companyDescTitle.textContent = translations.form.companyDescription;
@@ -228,6 +244,9 @@ function updateFormLabels() {
     const additionalTitle = document.getElementById('additional-title');
     if (additionalTitle) additionalTitle.textContent = translations.form.additional;
     
+    const writerTitle = document.getElementById('writer-title');
+    if (writerTitle) writerTitle.textContent = translations.form.writer || 'Letter Writer/Signatory';
+    
     // Update leaving reason labels
     const leavingLabels = {
         'leaving-employee': translations.form?.labels?.leavingEmployee || 'Resignation by Employee',
@@ -295,7 +314,7 @@ function updateIntroductionText() {
     
     // Get form values
     const formData = {
-        title: document.getElementById('title')?.value || '',
+        title: getTranslatedTitle(),
         firstName: document.getElementById('firstName')?.value || '',
         lastName: document.getElementById('lastName')?.value || '',
         dateOfBirth: document.getElementById('dateOfBirth')?.value || '',
@@ -322,11 +341,23 @@ function updateCompanyDescriptionText() {
     if (!examples) return;
     
     const selectedVariant = document.querySelector('input[name="companyVariant"]:checked')?.value || '1';
-    const selectedText = examples[selectedVariant] || '';
+    const template = examples[selectedVariant] || '';
+    
+    // Get company values for replacement
+    const formData = {
+        companyName: document.getElementById('companyName')?.value || '',
+        companyCity: document.getElementById('companyCity')?.value || ''
+    };
+    
+    // Replace placeholders with actual values
+    let text = template;
+    for (const [key, value] of Object.entries(formData)) {
+        text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), value);
+    }
     
     const companyTextArea = document.getElementById('company-description-text');
     if (companyTextArea) {
-        companyTextArea.value = selectedText;
+        companyTextArea.value = text;
     }
 }
 
@@ -560,18 +591,29 @@ function generateLetter() {
     if (!preview) return;
     
     // Get employee data
-    const title = getTranslatedTitle();
     const firstName = document.getElementById('firstName')?.value || '';
     const lastName = document.getElementById('lastName')?.value || '';
-    const dateOfBirth = document.getElementById('dateOfBirth')?.value || '';
-    const placeOfBirth = document.getElementById('placeOfBirth')?.value || '';
     const position = document.getElementById('position')?.value || '';
-    const department = document.getElementById('department')?.value || '';
     const startDate = document.getElementById('startDate')?.value || '';
     const endDate = document.getElementById('endDate')?.value || '';
     
+    // Get company data
+    const companyName = document.getElementById('companyName')?.value || '';
+    const companyStreet = document.getElementById('companyStreet')?.value || '';
+    const companyCity = document.getElementById('companyCity')?.value || '';
+    const companyPostalCode = document.getElementById('companyPostalCode')?.value || '';
+    const companyPhone = document.getElementById('companyPhone')?.value || '';
+    const companyEmail = document.getElementById('companyEmail')?.value || '';
+    const referenceNumber = document.getElementById('referenceNumber')?.value || '';
+    
+    // Get writer data
+    const writerName = document.getElementById('writerName')?.value || '';
+    const writerPosition = document.getElementById('writerPosition')?.value || '';
+    const writerEmail = document.getElementById('writerEmail')?.value || '';
+    const writerPhone = document.getElementById('writerPhone')?.value || '';
+    
     // Check required fields
-    if (!firstName || !lastName || !position || !startDate || !endDate) {
+    if (!firstName || !lastName || !position || !startDate || !endDate || !companyName || !companyCity || !writerName || !writerPosition) {
         alert(currentLanguage === 'de' ? 'Bitte füllen Sie alle Pflichtfelder aus.' : 
               currentLanguage === 'id' ? 'Harap lengkapi semua bidang yang wajib diisi.' :
               'Please fill in all required fields.');
@@ -598,14 +640,30 @@ function generateLetter() {
     const additionalText = document.getElementById('additional-text')?.value || '';
     
     // Build letter HTML
+    const today = new Date().toISOString().split('T')[0];
+    
     let letterHTML = `
-        <div class="letter-header mb-4">
-            <h2 class="text-center">${translations.preview?.letterTitle || 'Employment Reference Letter'}</h2>
-            <p class="text-center text-muted">${formatDate(endDate)}</p>
+        <div class="letter-letterhead mb-4">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <p class="mb-0"><strong>${companyName}</strong></p>
+                    ${companyStreet ? `<p class="mb-0 small">${companyStreet}</p>` : ''}
+                    <p class="mb-0 small">${companyPostalCode ? companyPostalCode + ' ' : ''}${companyCity}</p>
+                    ${companyPhone ? `<p class="mb-0 small">Tel: ${companyPhone}</p>` : ''}
+                    ${companyEmail ? `<p class="mb-0 small">Email: ${companyEmail}</p>` : ''}
+                </div>
+                <div class="text-end">
+                    ${referenceNumber ? `<p class="mb-0 small">Ref: ${referenceNumber}</p>` : ''}
+                    <p class="mb-0 small">${companyCity}, ${formatDate(today)}</p>
+                </div>
+            </div>
         </div>
         
-        <div class="letter-body">
-    `;
+        <div class="letter-title mb-4 mt-4">
+            <h3 class="text-center"><strong>${translations.preview?.letterTitle || 'Employment Reference Letter'}</strong></h3>
+        </div>
+        
+        <div class="letter-body">`;
     
     // Introduction
     if (introText) {
@@ -673,16 +731,14 @@ function generateLetter() {
         </div>
         
         <div class="letter-footer mt-5">
-            <div class="row">
-                <div class="col-6">
-                    <p class="mb-0">_______________________</p>
-                    <p class="small">${currentLanguage === 'de' ? 'Ort, Datum' : currentLanguage === 'id' ? 'Tempat, Tanggal' : 'Place, Date'}</p>
-                </div>
-                <div class="col-6">
-                    <p class="mb-0">_______________________</p>
-                    <p class="small">${currentLanguage === 'de' ? 'Unterschrift' : currentLanguage === 'id' ? 'Tanda Tangan' : 'Signature'}</p>
-                </div>
-            </div>
+            <p class="mb-0">${companyCity}, ${formatDate(today)}</p>
+            <p class="mb-5">${companyName}</p>
+            
+            <p class="mb-0 mt-4">_______________________</p>
+            <p class="mb-0"><strong>${writerName}</strong></p>
+            <p class="mb-0">${writerPosition}</p>
+            ${writerEmail ? `<p class="mb-0 small">${writerEmail}</p>` : ''}
+            ${writerPhone ? `<p class="mb-0 small">${writerPhone}</p>` : ''}
         </div>
     `;
     
@@ -747,3 +803,5 @@ function downloadLetterAsPDF() {
     // Download the PDF
     doc.save(filename);
 }
+
+// DOCX download function is loaded from docx-handler.js module

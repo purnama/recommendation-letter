@@ -52,6 +52,7 @@
     "introduction": "Introduction",
     "companyDescription": "Company Description",
     "duties": "Job Duties",
+    "writer": "Letter Writer/Signatory",
     "labels": {
       "title": "Title",
       "firstName": "First Name",
@@ -71,7 +72,18 @@
       "additionalApplication": "Intern: Application after graduation desired",
       "additionalOffer": "Intern: Job offer extended",
       "example": "Example",
-      "dutiesDescription": "(Here you can describe the employee's duties.)"
+      "dutiesDescription": "(Here you can describe the employee's duties.)",
+      "companyName": "Company Name",
+      "referenceNumber": "Reference Number (Optional)",
+      "companyStreet": "Street Address",
+      "companyPostalCode": "Postal Code",
+      "companyCity": "City",
+      "companyPhone": "Phone (Optional)",
+      "companyEmail": "Email (Optional)",
+      "writerName": "Writer's Full Name",
+      "writerPosition": "Writer's Position/Title",
+      "writerEmail": "Writer's Email (Optional)",
+      "writerPhone": "Writer's Phone (Optional)"
     },
     "titleOptions": {
       "mr": "Mr",
@@ -84,9 +96,9 @@
       "3": "{title} {firstName} {lastName}, born on {dateOfBirth} in {placeOfBirth}, worked for our company from {startDate} to {endDate} as {position} in the {department} department."
     },
     "companyExamples": {
-      "1": "Muster GmbH is an automotive supplier based in Musterstadt. Our core products include speed measurement displays. Our customer base consists primarily of German, but also other European automobile manufacturers. With around 200 employees, our company recently achieved sales of around 25 million euros.",
-      "2": "Muster AG, founded in 2007, specializes in backend services in the online gaming sector and has quickly established itself as a leading service provider in this segment. With our two locations in Musterstadt and Beispieldorf, we serve numerous customers of different sizes.",
-      "3": "Our company, Beispiel GmbH & Co. KG, has been producing confectionery and other fast-moving consumer goods since 1960. Our best-known brands include 'Beispielschokolade' and 'Muster-Eis'."
+      "1": "{companyName} is an automotive supplier based in {companyCity}. Our core products include speed measurement displays. Our customer base consists primarily of German, but also other European automobile manufacturers. With around 200 employees, our company recently achieved sales of around 25 million euros.",
+      "2": "{companyName}, founded in 2007, specializes in backend services in the online gaming sector and has quickly established itself as a leading service provider in this segment. With our two locations in {companyCity} and other cities, we serve numerous customers of different sizes.",
+      "3": "Our company, {companyName}, has been producing confectionery and other fast-moving consumer goods since 1960. Based in {companyCity}, we have established ourselves as a trusted name in the industry."
     },
     "dutiesVariants": {
       "1": "His/Her area of responsibility included:",

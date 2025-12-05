@@ -166,6 +166,59 @@
                             <textarea class="form-control" id="introduction-text" rows="3" readonly></textarea>
                         </div>
 
+                        <!-- Company Information Section -->
+                        <div class="form-section mb-5">
+                            <h4 class="section-title mb-4" id="company-info-title">Company Information</h4>
+                            
+                            <div class="row g-3">
+                                <!-- Company Name -->
+                                <div class="col-md-6">
+                                    <label for="companyName" class="form-label" id="label-companyName">Company Name</label>
+                                    <input type="text" class="form-control" id="companyName" name="companyName" value="Muster GmbH" required>
+                                </div>
+                                
+                                <!-- Reference Number (Optional) -->
+                                <div class="col-md-6">
+                                    <label for="referenceNumber" class="form-label" id="label-referenceNumber">Reference Number (Optional)</label>
+                                    <input type="text" class="form-control" id="referenceNumber" name="referenceNumber" placeholder="HR/2025/001">
+                                </div>
+                            </div>
+                            
+                            <div class="row g-3 mt-3">
+                                <!-- Street Address -->
+                                <div class="col-md-8">
+                                    <label for="companyStreet" class="form-label" id="label-companyStreet">Street Address</label>
+                                    <input type="text" class="form-control" id="companyStreet" name="companyStreet" value="Musterstraße 123">
+                                </div>
+                                
+                                <!-- Postal Code -->
+                                <div class="col-md-4">
+                                    <label for="companyPostalCode" class="form-label" id="label-companyPostalCode">Postal Code</label>
+                                    <input type="text" class="form-control" id="companyPostalCode" name="companyPostalCode" value="12345">
+                                </div>
+                            </div>
+                            
+                            <div class="row g-3 mt-3">
+                                <!-- City -->
+                                <div class="col-md-4">
+                                    <label for="companyCity" class="form-label" id="label-companyCity">City</label>
+                                    <input type="text" class="form-control" id="companyCity" name="companyCity" value="Jakarta" required>
+                                </div>
+                                
+                                <!-- Phone -->
+                                <div class="col-md-4">
+                                    <label for="companyPhone" class="form-label" id="label-companyPhone">Phone (Optional)</label>
+                                    <input type="tel" class="form-control" id="companyPhone" name="companyPhone" placeholder="+49 30 12345678">
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="col-md-4">
+                                    <label for="companyEmail" class="form-label" id="label-companyEmail">Email (Optional)</label>
+                                    <input type="email" class="form-control" id="companyEmail" name="companyEmail" placeholder="info@company.com">
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Company Description Section -->
                         <div class="form-section mb-5">
                             <h4 class="section-title mb-4" id="company-description-title">Company Description</h4>
@@ -636,6 +689,39 @@
                             </div>
                         </div>
 
+                        <!-- Letter Writer/Signatory Section -->
+                        <div class="form-section mb-5">
+                            <h4 class="section-title mb-3" id="writer-title">Letter Writer/Signatory</h4>
+                            
+                            <div class="row g-3">
+                                <!-- Writer Name -->
+                                <div class="col-md-6">
+                                    <label for="writerName" class="form-label" id="label-writerName">Writer's Full Name</label>
+                                    <input type="text" class="form-control" id="writerName" name="writerName" value="Dr. Maria Schmidt" required>
+                                </div>
+                                
+                                <!-- Writer Position -->
+                                <div class="col-md-6">
+                                    <label for="writerPosition" class="form-label" id="label-writerPosition">Writer's Position/Title</label>
+                                    <input type="text" class="form-control" id="writerPosition" name="writerPosition" value="Human Resources Director" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row g-3 mt-3">
+                                <!-- Writer Email (Optional) -->
+                                <div class="col-md-6">
+                                    <label for="writerEmail" class="form-label" id="label-writerEmail">Writer's Email (Optional)</label>
+                                    <input type="email" class="form-control" id="writerEmail" name="writerEmail" placeholder="m.schmidt@company.com">
+                                </div>
+                                
+                                <!-- Writer Phone (Optional) -->
+                                <div class="col-md-6">
+                                    <label for="writerPhone" class="form-label" id="label-writerPhone">Writer's Phone (Optional)</label>
+                                    <input type="tel" class="form-control" id="writerPhone" name="writerPhone" placeholder="+49 30 12345678">
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Letter Preview Section -->
                         <div class="form-section mb-5 print-section">
                             <h3 class="text-center mb-4 no-print" id="preview-title">Complete Reference Letter</h3>
@@ -646,9 +732,14 @@
                                         <button type="button" class="btn btn-primary" onclick="generateLetter()" id="btn-generate">
                                             <i class="bi bi-file-earmark-text"></i> Generate Letter
                                         </button>
-                                        <button type="button" class="btn btn-success" onclick="downloadLetterAsPDF()" id="btn-download">
-                                            <i class="bi bi-download"></i> Download PDF
-                                        </button>
+                                        <div>
+                                            <button type="button" class="btn btn-success me-2" onclick="downloadLetterAsPDF()" id="btn-download-pdf">
+                                                <i class="bi bi-download"></i> Download PDF
+                                            </button>
+                                            <button type="button" class="btn btn-info" onclick="downloadLetterAsDOCX()" id="btn-download-docx">
+                                                <i class="bi bi-file-word"></i> Download DOCX
+                                            </button>
+                                        </div>
                                     </div>
                                     
                                     <div id="letter-preview" class="letter-content p-4 bg-white border rounded print-only">
@@ -679,7 +770,20 @@
     <!-- jsPDF Library for PDF Generation -->
     <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
     
+    <!-- docx.js Library for DOCX Generation (loaded as ES module) -->
+    <script type="importmap">
+    {
+      "imports": {
+        "docx": "https://cdn.jsdelivr.net/npm/docx@8.5.0/+esm",
+        "file-saver": "https://cdn.jsdelivr.net/npm/file-saver@2.0.5/+esm"
+      }
+    }
+    </script>
+    
     <!-- Custom JS -->
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=5"></script>
+    
+    <!-- DOCX Handler Module -->
+    <script type="module" src="js/docx-handler.js"></script>
 </body>
 </html>
