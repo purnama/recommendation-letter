@@ -105,6 +105,7 @@
       "2": "He/She essentially assumed the following tasks:",
       "3": "As {position} in the {department} department, {title} {lastName} performed the following duties:"
     },
+    "dutiesDefault": "• Design, develop, and maintain software applications and systems\n• Collaborate with cross-functional teams to define and implement technical solutions\n• Conduct code reviews and ensure adherence to coding standards\n• Troubleshoot and resolve technical issues in production environments\n• Participate in sprint planning and agile development processes\n• Document technical specifications and system architecture\n• Mentor junior team members and provide technical guidance",
     "performanceRatings": "Performance Ratings",
     "knowledge": "Professional Knowledge",
     "willingness": "Willingness to Perform",

@@ -93,6 +93,7 @@
       "2": "Dia pada dasarnya mengambil tugas-tugas berikut:",
       "3": "Sebagai {position} di departemen {department}, {title} {lastName} melakukan tugas-tugas berikut:"
     },
+    "dutiesDefault": "• Merancang, mengembangkan, dan memelihara aplikasi dan sistem perangkat lunak\n• Berkolaborasi dengan tim lintas fungsi untuk mendefinisikan dan mengimplementasikan solusi teknis\n• Melakukan tinjauan kode dan memastikan kepatuhan terhadap standar pengkodean\n• Mengatasi dan menyelesaikan masalah teknis di lingkungan produksi\n• Berpartisipasi dalam perencanaan sprint dan proses pengembangan agile\n• Mendokumentasikan spesifikasi teknis dan arsitektur sistem\n• Membimbing anggota tim junior dan memberikan panduan teknis",
     "performanceRatings": "Penilaian Kinerja",
     "knowledge": "Pengetahuan Profesional",
     "willingness": "Kesediaan Bekerja",

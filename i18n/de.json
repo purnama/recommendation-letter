@@ -93,6 +93,7 @@
       "2": "Er übernahm im Wesentlichen die folgenden Aufgaben:",
       "3": "Als {position} in der Abteilung {department} führte {title} {lastName} die folgenden Tätigkeiten aus:"
     },
+    "dutiesDefault": "• Entwicklung, Implementierung und Wartung von Softwareanwendungen und Systemen\n• Zusammenarbeit mit funktionsübergreifenden Teams zur Definition und Umsetzung technischer Lösungen\n• Durchführung von Code-Reviews und Sicherstellung der Einhaltung von Coding-Standards\n• Fehleranalyse und Behebung technischer Probleme in Produktionsumgebungen\n• Teilnahme an Sprint-Planungen und agilen Entwicklungsprozessen\n• Dokumentation technischer Spezifikationen und Systemarchitekturen\n• Mentoring und fachliche Unterstützung von Junior-Teammitgliedern",
     "performanceRatings": "Leistungsbewertungen",
     "knowledge": "Fachwissen",
     "willingness": "Leistungsbereitschaft",

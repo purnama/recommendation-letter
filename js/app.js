@@ -52,9 +52,10 @@ function setupEventListeners() {
     const languageSelector = document.getElementById('language-selector');
     if (languageSelector) {
         languageSelector.addEventListener('change', function(e) {
+            const previousLanguage = currentLanguage;
             currentLanguage = e.target.value;
             window.currentLanguage = currentLanguage;
-            loadTranslations();
+            loadTranslations(previousLanguage);
         });
     }
     
@@ -128,16 +129,39 @@ function setupPerformanceListeners(category) {
 }
 
 // Load translations based on selected language
-async function loadTranslations() {
+async function loadTranslations(previousLanguage = null) {
     try {
         console.log(`Loading translations for language: ${currentLanguage}`);
+        
+        // Get current duties content before loading new translations
+        const dutiesListElement = document.getElementById('duties-list');
+        const currentDutiesContent = dutiesListElement?.value || '';
+        
         const response = await fetch(`i18n/${currentLanguage}.json`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
+        
+        const previousTranslations = translations;
         translations = await response.json();
         window.translations = translations;
         console.log('Translations loaded successfully:', translations);
+        
+        // Update duties content if it matches the previous language's default
+        if (previousLanguage && dutiesListElement) {
+            const previousDefault = previousTranslations.form?.dutiesDefault || '';
+            const newDefault = translations.form?.dutiesDefault || '';
+            
+            // If current content matches previous default (user hasn't customized), update to new default
+            if (!currentDutiesContent || currentDutiesContent.trim() === previousDefault.trim()) {
+                dutiesListElement.value = newDefault;
+            }
+            // Otherwise keep user's custom content
+        } else if (dutiesListElement && !currentDutiesContent) {
+            // Initial load - set default duties
+            dutiesListElement.value = translations.form?.dutiesDefault || '';
+        }
+        
         updateUILanguage();
     } catch (error) {
         console.error('Error loading translations:', error);
