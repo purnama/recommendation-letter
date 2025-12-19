@@ -83,6 +83,8 @@ function setupEventListeners() {
             field.addEventListener('change', updateIntroductionText);
             field.addEventListener('input', updateAllPerformanceTexts);
             field.addEventListener('change', updateAllPerformanceTexts);
+            field.addEventListener('input', updateDutiesIntroText);
+            field.addEventListener('change', updateDutiesIntroText);
         }
     });
     
@@ -379,6 +381,9 @@ function updateIntroductionText() {
         text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), value);
     }
     
+    // Replace pronouns based on selected title
+    text = replacePronounsInText(text);
+    
     const introTextArea = document.getElementById('introduction-text');
     if (introTextArea) {
         introTextArea.value = text;
@@ -434,6 +439,9 @@ function updateDutiesIntroText() {
         text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), value);
     }
     
+    // Replace pronouns based on selected title
+    text = replacePronounsInText(text);
+    
     const dutiesIntroTextArea = document.getElementById('duties-intro-text');
     if (dutiesIntroTextArea) {
         dutiesIntroTextArea.value = text;
@@ -479,6 +487,73 @@ function getTranslatedTitle() {
     return translations.form.titleOptions[titleValue] || titleValue;
 }
 
+// Helper function to get pronouns based on title
+function getPronouns() {
+    const titleValue = document.getElementById('title')?.value || 'mr';
+    const lang = currentLanguage;
+    
+    // Define pronouns for each language and gender
+    const pronouns = {
+        'en': {
+            'mr': { he: 'he', she: 'he', him: 'him', his: 'his', himself: 'himself', He: 'He', His: 'His' },
+            'ms': { he: 'she', she: 'she', him: 'her', his: 'her', himself: 'herself', He: 'She', His: 'Her' },
+            'dr': { he: 'he', she: 'he', him: 'him', his: 'his', himself: 'himself', He: 'He', His: 'His' } // Default to male
+        },
+        'de': {
+            'mr': { er: 'er', sein: 'sein', ihm: 'ihm', ihn: 'ihn', sich: 'sich', Er: 'Er', Sein: 'Sein' },
+            'ms': { er: 'sie', sein: 'ihr', ihm: 'ihr', ihn: 'sie', sich: 'sich', Er: 'Sie', Sein: 'Ihr' },
+            'dr': { er: 'er', sein: 'sein', ihm: 'ihm', ihn: 'ihn', sich: 'sich', Er: 'Er', Sein: 'Sein' }
+        },
+        'id': {
+            // Indonesian doesn't have gendered pronouns - use "dia" and "nya" for all
+            'mr': { he: 'ia', she: 'ia', him: 'nya', his: 'nya', himself: 'dirinya', He: 'Ia', His: 'Nya' },
+            'ms': { he: 'ia', she: 'ia', him: 'nya', his: 'nya', himself: 'dirinya', He: 'Ia', His: 'Nya' },
+            'dr': { he: 'ia', she: 'ia', him: 'nya', his: 'nya', himself: 'dirinya', He: 'Ia', His: 'Nya' }
+        }
+    };
+    
+    return pronouns[lang]?.[titleValue] || pronouns['en']['mr'];
+}
+
+// Helper function to replace pronouns in text
+function replacePronounsInText(text) {
+    if (!text) return text;
+    
+    const pronouns = getPronouns();
+    
+    // Replace pronouns with placeholders first, then with actual values
+    // This ensures we don't replace parts of words
+    const replacements = {
+        // English pronouns
+        '{he}': pronouns.he || pronouns.er,
+        '{she}': pronouns.she || pronouns.er,
+        '{him}': pronouns.him || pronouns.ihm,
+        '{his}': pronouns.his || pronouns.sein,
+        '{himself}': pronouns.himself || pronouns.sich,
+        '{He}': pronouns.He || pronouns.Er,
+        '{His}': pronouns.His || pronouns.Sein,
+        // German pronouns
+        '{er}': pronouns.er,
+        '{sein}': pronouns.sein,
+        '{ihm}': pronouns.ihm,
+        '{ihn}': pronouns.ihn,
+        '{sich}': pronouns.sich,
+        '{Er}': pronouns.Er,
+        '{Sein}': pronouns.Sein,
+        // Legacy support
+        'He/She': pronouns.He || pronouns.Er,
+        'he/she': pronouns.he || pronouns.er,
+        'His/Her': pronouns.His || pronouns.Sein,
+        'his/her': pronouns.his || pronouns.sein
+    };
+    
+    for (const [key, value] of Object.entries(replacements)) {
+        text = text.replace(new RegExp(key.replace(/[{}]/g, '\\$&'), 'g'), value);
+    }
+    
+    return text;
+}
+
 // Update performance text based on selected rating and variant
 function updatePerformanceText(category) {
     const rating = document.querySelector(`input[name="${category}Rating"]:checked`)?.value || 'sehr-gut';
@@ -501,6 +576,9 @@ function updatePerformanceText(category) {
     for (const [key, value] of Object.entries(formData)) {
         text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), value);
     }
+    
+    // Replace pronouns based on selected title
+    text = replacePronounsInText(text);
     
     const textArea = document.getElementById(`${category}-text`);
     if (textArea) {
@@ -541,6 +619,9 @@ function updateLeavingText() {
         text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), value);
     }
     
+    // Replace pronouns based on selected title
+    text = replacePronounsInText(text);
+    
     const textArea = document.getElementById('leaving-text');
     if (textArea) {
         textArea.value = text;
@@ -574,6 +655,9 @@ function updateAdditionalText() {
     for (const [key, value] of Object.entries(formData)) {
         text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), value);
     }
+    
+    // Replace pronouns based on selected title
+    text = replacePronounsInText(text);
     
     const textArea = document.getElementById('additional-text');
     if (textArea) {
